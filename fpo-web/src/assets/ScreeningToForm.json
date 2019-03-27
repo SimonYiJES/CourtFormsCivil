@@ -1,0 +1,243 @@
+{
+  "pages": [
+    {
+      "name": "SmallClaim Prescreen",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "qssc1",
+          "title": "What would you like to do?",
+          "choices": [
+            {
+              "value": "start",
+              "text": "Start a lawsuit: complete a Notice of Claim"
+            },
+            {
+              "value": "reply",
+              "text": "Reply to a lawsuit: complete a Reply to a Claim"
+            },
+            {
+              "value": "diff",
+              "text": "Complete a different BC Small Claims Court form"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "qssc2",
+          "visibleIf": "{qssc1} = \"diff\"",
+          "title": "Select the BC Small Claims Court form you would like to complete",
+          "choices": [
+            {
+              "value": "cos",
+              "text": "Certificate of Service"
+            },
+            {
+              "value": "ado",
+              "text": "Application for a Default Order"
+            },
+            {
+              "value": "ar",
+              "text": "Application to the Registrar"
+            },
+            {
+              "value": "aj",
+              "text": "Application to the Judge"
+            },
+            {
+              "value": "eao",
+              "text": "Enforcement application/order"
+            },
+            {
+              "value": "appeal",
+              "text": "File an appeal"
+            },
+            {
+              "value": "other",
+              "text": "Other"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "qssc3",
+          "visibleIf": "{qssc1} = \"start\"",
+          "title": "Which of the following best describes your situation?",
+          "choices": [
+            {
+              "value": "debt",
+              "text": "Debt (collect money)"
+            },
+            {
+              "value": "contract",
+              "text": "Contract dispute"
+            },
+            {
+              "value": "goods",
+              "text": "Dispute about goods purchase"
+            },
+            {
+              "value": "service",
+              "text": "Dispute about a service "
+            },
+            {
+              "value": "other",
+              "text": "Other (none of the above)"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "qssc4",
+          "visibleIf": "{qssc1} = \"reply\"",
+          "title": "Which of the following best describes your situation?",
+          "choices": [
+            {
+              "value": "rdebt",
+              "text": "Debt (collect money)"
+            },
+            {
+              "value": "rcontract",
+              "text": "Contract dispute"
+            },
+            {
+              "value": "rgoods",
+              "text": "Dispute about goods purchase"
+            },
+            {
+              "value": "rservice",
+              "text": "Dispute about a service "
+            },
+            {
+              "value": "rother",
+              "text": "Other (none of the above)"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "scccodeCERT",
+          "visible": false,
+          "visibleIf": "{qssc2} = \"cos\" and {qssc1} = \"diff\"",
+          "html": "USE CODE: CERT"
+        },
+        {
+          "type": "html",
+          "name": "scccodeAPDO",
+          "visible": false,
+          "visibleIf": "{qssc2} = \"ado\" and {qssc1} = \"diff\"",
+          "html": "USE CODE: APDO"
+        },
+        {
+          "type": "html",
+          "name": "scccodeAPRR",
+          "visible": false,
+          "visibleIf": "{qssc2} = \"ar\" and {qssc1} = \"diff\"",
+          "html": "USE CODE: APRR"
+        },
+        {
+          "type": "html",
+          "name": "scccodeAPJD",
+          "visible": false,
+          "visibleIf": "{qssc2} = \"aj\" and {qssc1} = \"diff\"",
+          "html": "USE CODE: APJD"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCDC",
+          "visible": false,
+          "visibleIf": "{qssc3} = \"debt\" and {qssc1} = \"start\"",
+          "html": "USE CODE: NCDC"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCCC",
+          "visible": false,
+          "visibleIf": "{qssc3} = \"contract\" and {qssc1} = \"start\"",
+          "html": "USE CODE: NCCC"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCGC",
+          "visible": false,
+          "visibleIf": "{qssc3} = \"goods\" and {qssc1} = \"start\"",
+          "html": "USE CODE: NCGC"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCSC",
+          "visible": false,
+          "visibleIf": "{qssc3} = \"service\" and {qssc1} = \"start\"",
+          "html": "USE CODE: NCSC"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCOCO81",
+          "visible": false,
+          "visibleIf": "{qssc3} = \"other\" and {qssc1} = \"start\"",
+          "html": "USE CODE: NCOC"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCDR",
+          "visible": false,
+          "visibleIf": "{qssc4} = \"rdebt\" and {qssc1} = \"reply\"",
+          "html": "USE CODE: NCDR"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCCR",
+          "visible": false,
+          "visibleIf": "{qssc4} = \"rcontract\" and {qssc1} = \"reply\"",
+          "html": "USE CODE: NCCR"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCGR",
+          "visible": false,
+          "visibleIf": "{qssc4} = \"rgoods\" and {qssc1} = \"reply\"",
+          "html": "USE CODE: NCGR"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCSR",
+          "visible": false,
+          "visibleIf": "{qssc4} = \"rservice\" and {qssc1} = \"reply\"",
+          "html": "USE CODE: NCSR"
+        },
+        {
+          "type": "html",
+          "name": "scccodeNCOR",
+          "visible": false,
+          "visibleIf": "{qssc4} = \"rother\" and {qssc1} = \"reply\"",
+          "html": "USE CODE: NCOR"
+        },
+        {
+          "type": "html",
+          "name": "sccofframp1",
+          "visible": false,
+          "visibleIf": "{qssc2} = \"eao\" and {qssc1} = \"diff\"",
+          "html": "This online tool does not include forms related to enforcing orders."
+        },
+        {
+          "type": "html",
+          "name": "sccofframp2",
+          "visible": false,
+          "visibleIf": "{qssc2} = \"appeal\" and {qssc1} = \"diff\"",
+          "html": "This online tool does not include forms related to appealing decisions."
+        },
+        {
+          "type": "html",
+          "name": "sccofframp3",
+          "visible": false,
+          "visibleIf": "{qssc2} = \"other\" and {qssc1} = \"diff\"",
+          "html": "This online tool does not include other Small Claims Court forms"
+        }
+
+      ],
+      "title": "Screening to Form"
+    }
+  ],
+  "showQuestionNumbers": "off",
+  "requiredText": ""
+}

@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row user-dashboard">
+    <div class="col-sx-12 col-md-12 col-lg-12">
+      <h1>User profile</h1>
+    </div>
+    <form action="">
+      <div class="col-sx-12 col-md-6 col-lg-6">
+      <div class="info-block">
+        <label>First name</label>
+        <input type="text" [(ngModel)]="data.firstName" name="first" placeholder=" ...">
+        <label>Last name</label>
+        <input type="text" [(ngModel)]="data.lastName" name="last" placeholder=" ...">
+      </div>
+    </div>
+    <div class="col-sx-12 col-md-6 col-lg-6">
+      <div class="info-block">
+        <label>Address</label>
+        <input type="text" [(ngModel)]="data.address" name="address" placeholder=" ...">
+        <label>Phone number</label>
+        <input type="number" [(ngModel)]="data.phone" name="phone" placeholder=" ...">
+        <label>Email address</label>
+        <input type="email" [(ngModel)]="data.email" name="email" placeholder=" ...">
+      </div>
+    </div>
+    </form>
+  </div>
+  <div class="row forms-container">
+    <div class="col-sx-12 col-md-12 col-lg-12">
+      <h1>Forms</h1>
+    </div>
+    <div class="col-sx-12 col-md-4 col-lg-4">
+      <h3>In progress</h3>
+      <ul *ngFor="let form of data.forms.inProgress">
+        <li>{{form.name}}</li>
+      </ul>
+    </div>
+    <div class="col-sx-12 col-md-4 col-lg-4">
+      <h3>Finished</h3>
+      <ul *ngFor="let form of data.forms.finished">
+        <li>{{form.name}}</li>
+      </ul>
+    </div>
+    <div class="col-sx-12 col-md-4 col-lg-4">
+      <h3>Submitted</h3>
+      <ul *ngFor="let form of data.forms.submitted">
+        <li>{{form.name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

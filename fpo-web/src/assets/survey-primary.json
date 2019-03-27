@@ -1,0 +1,4147 @@
+{
+  "title": "Supremecourt",
+  "pages": [
+    {
+      "name": "PLTInfo",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "PLTQ1",
+          "title": "You are suing as...",
+          "description": "The person/entity that is bringing a claim should be the one directly involved in the dispute. For example they have suffered damages, is owed a debt or is party to a contract dispute.",
+          "choices": [
+            {
+              "value": "PLTQ1A",
+              "text": "an individual"
+            },
+            {
+              "value": "PLTQ1B",
+              "text": "as a company"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "PLTPanelQ2",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "PLTQ2",
+              "title": "Are you 19 years of age or older?"
+            },
+            {
+              "type": "panel",
+              "name": "PLTPanelQ3",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "PLTQ3",
+                  "title": "Do you have a litigation guardian to act on your behalf?",
+                  "description": "If you are under 19 years of age, you must start the claim through an adult who lives in BC and is willing to act as your litigation guardian. This person must file at the registry a signed consent to act as litigation guardian and certificate of fitness."
+                },
+                {
+                  "type": "helptext",
+                  "name": "PLTQ3Help1",
+                  "title": "What if I can't find an adult to act as my litigation guardian?",
+                  "titleLocation": "hidden",
+                  "body": "Contact the child and youth services section of the Public Guardian and Trustee. You may contact their office by phone at 604 660-4444 or 1-800-663- 7867 or by email at mail@trustee.bc.ca"
+                },
+                {
+                  "type": "infotext",
+                  "name": "PLTQ3Define1",
+                  "title": "A litigation guardian is an adult who lives in BC and is willing to act on your behalf in legal matters. This person must file at the registry a signed consent to act as litigation guardian and certificate of fitness.",
+                  "titleLocation": "hidden"
+                },
+                {
+                  "type": "infotext",
+                  "name": "PLTQ3End",
+                  "visible": false,
+                  "visibleIf": "{PLTQ3} = \"n\"",
+                  "title": "You must have a litigation guardian to act on your behalf. If you are unable to get one contact the child and youth services section of the Public Guardian and Trustee. You may contact their office by phone at 604 660-4444 or 1-800-663- 7867 or by email at mail@trustee.bc.ca ",
+                  "titleLocation": "hidden",
+                  "messageStyle": "error"
+                },
+                {
+                  "type": "personname",
+                  "name": "LGClaimant",
+                  "visible": false,
+                  "visibleIf": "{PLTQ3} = \"y\"",
+                  "title": "What is the name of your litigation guardian?"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{PLTQ2} = \"n\""
+            },
+            {
+              "type": "panel",
+              "name": "PLTPanelQ6",
+              "elements": [
+                {
+                  "type": "personname",
+                  "name": "Claimant1",
+                  "title": "What is your full name?",
+                  "description": "Please include your full legal name. For example, how it appears on your passport or government issued identification."
+                },
+                {
+                  "type": "yesno",
+                  "name": "PLTQ7",
+                  "title": "Has a lawyer agreed to receive documents on your behalf?",
+                  "description": "If you have retained a lawyer to be the lawyer on record they will usually receive documents for you. If you are unsure it is best to clarify with them."
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{PLTQ2} = \"y\" or ({PLTQ2} = \"n\" and {PLTQ3} = \"y\")"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{PLTQ1} = \"PLTQ1A\""
+        },
+        {
+          "type": "panel",
+          "name": "PLTPanelQ5",
+          "elements": [
+            {
+              "type": "text",
+              "name": "ClaimantComp",
+              "title": "What is the registered name of the company making the claim?"
+            },
+            {
+              "type": "helptext",
+              "name": "PLTQ5Help1",
+              "title": "How do I find out the registered name?",
+              "titleLocation": "hidden",
+              "body": "To get the correct name and address of the registered office, you must request a company search. For information about obtaining a company search, please visit the Government of BC website for Requesting Searches & Certificates” (https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/permits-licences/businesses-incorporated-companies/searches-certificates)"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{PLTQ1} = \"PLTQ1B\""
+        },
+        {
+          "type": "panel",
+          "name": "PLTPanelQ9",
+          "elements": [
+            {
+              "type": "address",
+              "name": "CAddress",
+              "title": "What is the address where you can receive court documents?",
+              "description": "This is the address where the court and other parties will send documents and notifications to you. If your address changes at any time, be sure to notify the court and all other parties to the lawsuit. To do this, use the Notice of Address form (Link to form)."
+            },
+            {
+              "type": "helptext",
+              "name": "PLTQ9Help1",
+              "title": "Do I need to provide my home address?",
+              "titleLocation": "hidden",
+              "body": "No, the address does not need to be to your home, so long as you are able to receive documents at the address provided. For example, it can be a work address."
+            },
+            {
+              "type": "helptext",
+              "name": "PLTQ9Help2",
+              "title": "What address do I give for a company or society?",
+              "titleLocation": "hidden",
+              "body": "If the company is incorporated you must provide the registered office as the address. In some cases this may be a different address than where business is carried out. For a society use the address of the society's registered office on file with the Registrar of Companies."
+            },
+            {
+              "type": "text",
+              "name": "PLTQ10",
+              "title": "Fax Number",
+              "description": "Only include a fax number if you are OK with receiving court documents via fax."
+            },
+            {
+              "type": "text",
+              "name": "PLTQ11",
+              "startWithNewLine": false,
+              "title": "Email Address",
+              "description": "Only include an email if you are OK with receiving court documents via email"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{PLTQ1} = \"PLTQ1B\" or ({PLTQ1} = \"PLTQ1A\" and {PLTQ2} = \"y\" and {PLTQ7} = \"n\") or ({PLTQ1} = \"PLTQ1A\" and {PLTQ2} = \"n\" and {PLTQ3} = \"y\" and {PLTQ7} = \"n\")"
+        },
+        {
+          "type": "panel",
+          "name": "PLTPanelQ8",
+          "elements": [
+            {
+              "type": "address",
+              "name": "CLAddress",
+              "title": "What is the lawyers address where they can receive documents?",
+              "description": "This will usually be the address of their firm."
+            },
+            {
+              "type": "contactinfo",
+              "name": "CLContact",
+              "title": "Contact Information"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{PLTQ1} = \"PLTQ1A\" and {PLTQ7} = \"y\" and ({PLTQ2} = \"y\" or {PLTQ3} = \"y\")"
+        },
+        {
+          "type": "text",
+          "name": "PLTQ12",
+          "visible": false,
+          "visibleIf": "{PLTQ1} = \"PLTQ1B\" or ({PLTQ7} notempty and ({PLTQ2} = \"y\" or {PLTQ3} = \"y\"))",
+          "title": "What is your occupation?",
+          "description": "For example, web designer, accountant, nurse, student, waiter, etc."
+        }
+      ],
+      "title": "PLT's Information"
+    },
+    {
+      "name": "NOCCFilter",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "NOCCFilterQ2",
+          "title": "What area does your dispute involve?",
+          "choices": [
+            {
+              "value": "NOCCFilterQ2A",
+              "text": "Personal injury"
+            },
+            {
+              "value": "NOCCFilterQ2B",
+              "text": "Motor Vehicle Accident"
+            },
+            {
+              "value": "NOCCFilterQ2C",
+              "text": "Contract dispute"
+            },
+            {
+              "value": "NOCCFilterQ2D",
+              "text": "Buying goods and services"
+            },
+            {
+              "value": "NOCCFilterQ2E",
+              "text": "Loans and debts"
+            },
+            {
+              "value": "NOCCFilterQ2F",
+              "text": "Other"
+            }
+          ]
+        },
+        {
+          "type": "infotext",
+          "name": "NOCCFilterContinue",
+          "visible": false,
+          "visibleIf": "{NOCCFilterQ2} notempty",
+          "title": "Continue",
+          "titleLocation": "hidden"
+        }
+      ],
+      "title": "NOCC Filter"
+    },
+    {
+      "name": "DefendantInfo",
+      "elements": [
+        {
+          "type": "yesno",
+          "name": "DIQ1",
+          "title": "Do you wish to sue a single person or entity?",
+          "description": "If you are unsure who to name as a defendant you should seek legal advice."
+        },
+        {
+          "type": "infotext",
+          "name": "DIQ1Define1",
+          "title": "Entities include companies, businesses, partnerships, societies, agencies and governments.",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "infotext",
+          "name": "DIQ1End",
+          "visible": false,
+          "visibleIf": "{DIQ1} = \"n\"",
+          "title": "I'm afraid at this time this tool is only available for single party defendant lawsuits. If you wish to name multiple defendants you will need to fill out the court forms here: ",
+          "titleLocation": "hidden",
+          "messageStyle": "error"
+        },
+        {
+          "type": "panel",
+          "name": "DIPanelQ2",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "DIQ2",
+              "title": "You are suing...",
+              "choices": [
+                {
+                  "value": "DIQ2A",
+                  "text": "an individual"
+                },
+                {
+                  "value": "DIQ2B",
+                  "text": "a business"
+                },
+                {
+                  "value": "DIQ2C",
+                  "text": "an incorporated company"
+                },
+                {
+                  "value": "DIQ2D",
+                  "text": "a partnership"
+                },
+                {
+                  "value": "DIQ2E",
+                  "text": "a society"
+                },
+                {
+                  "value": "DIQ2F",
+                  "text": "provincial government of BC"
+                },
+                {
+                  "value": "DIQ2G",
+                  "text": "other"
+                }
+              ]
+            },
+            {
+              "type": "helptext",
+              "name": "DIQ2Help1",
+              "title": "How do I know if it's an incorporated company?",
+              "titleLocation": "hidden",
+              "body": "Usually the name of an incorporated company ends with Limited (Ltd.), Corporation (Corp.) or Incorporated (Inc.) If you are unsure it is best to do a company search. "
+            },
+            {
+              "type": "helptext",
+              "name": "DIQ2Help2",
+              "title": "What if the person I am suing is under 19 years old?",
+              "titleLocation": "hidden",
+              "body": "If the defendant is under the age of 19 their legal guardian will need to be served with the Notice of Civil Claim. "
+            },
+            {
+              "type": "personname",
+              "name": "DIQ3",
+              "visible": false,
+              "visibleIf": "{DIQ2} = \"DIQ2A\"",
+              "title": "What is the full name of the person you are suing?",
+              "description": "Use their full name. Do not use initials, titles or brackets. If the person has goes by two different names you can use also known as. For example Samantha Lee also known as Samantha McGregory."
+            },
+            {
+              "type": "text",
+              "name": "DIQ4",
+              "visible": false,
+              "visibleIf": "{DIQ2} = \"DIQ2B\"",
+              "title": "What is the name of the business you are suing?"
+            },
+            {
+              "type": "panel",
+              "name": "DIPanelQ5",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "DIQ5",
+                  "title": "What is the registered name of the incorporated company you are suing?"
+                },
+                {
+                  "type": "helptext",
+                  "name": "DIQ5Help1",
+                  "title": "How do I find out the registered name?",
+                  "titleLocation": "hidden",
+                  "body": "To get the correct name and address of the registered office, you must request a company search. For information about obtaining a company search, please visit the Government of BC website for Requesting Searches & Certificates” (https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/permits-licences/businesses-incorporated-companies/searches-certificates)"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{DIQ2} = \"DIQ2C\""
+            },
+            {
+              "type": "text",
+              "name": "DIQ6",
+              "visible": false,
+              "visibleIf": "{DIQ2} = \"DIQ2D\"",
+              "title": "What is the name of the partnership you are suing?"
+            },
+            {
+              "type": "text",
+              "name": "DIQ7",
+              "visible": false,
+              "visibleIf": "{DIQ2} = \"DIQ2E\"",
+              "title": "What is the name of the society you are suing?"
+            },
+            {
+              "type": "text",
+              "name": "DIQ8",
+              "visible": false,
+              "visibleIf": "{DIQ2} = \"DIQ2G\"",
+              "title": "What is the name of the entity you are suing?"
+            },
+            {
+              "type": "panel",
+              "name": "DIPanelQ9",
+              "elements": [
+                {
+                  "type": "address",
+                  "name": "DIQ9A",
+                  "title": "What is [Defendant 1] 's address?",
+                  "description": "This is the address where they can receive court documents and notifications. If they are an incorporated company this will be the registered address you can find after doing a corporate search. For information on how to do a corporate search see___"
+                },
+                {
+                  "type": "contactinfo",
+                  "name": "DIQ9B",
+                  "title": "Contact Information"
+                },
+                {
+                  "type": "helptext",
+                  "name": "DIQ9Help1",
+                  "title": "What if I can't find the defendant's address?",
+                  "titleLocation": "hidden",
+                  "body": "If you have been unable to find out the address of the defendant on your own you may consider higher a private investigator firm."
+                },
+                {
+                  "type": "helptext",
+                  "name": "DIQ9Help2",
+                  "title": "How do I find out the registered office address?",
+                  "titleLocation": "hidden",
+                  "body": "To get the correct name and address of the registered office, you must request a company search. For information about obtaining a company search, please visit the Government of BC website for Requesting Searches & Certificates” (https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/permits-licences/businesses-incorporated-companies/searches-certificates)"
+                },
+                {
+                  "type": "infotext",
+                  "name": "DIContinue",
+                  "title": "Continue",
+                  "titleLocation": "hidden"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{DIQ2} notempty"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{DIQ1} = \"y\""
+        }
+      ],
+      "title": "Defendant's Info"
+    },
+    {
+      "name": "NOCCGeneral",
+      "elements": [
+        {
+          "type": "text",
+          "name": "NGQ2",
+          "title": "What is your relationship with the defendant?"
+        },
+        {
+          "type": "comment",
+          "name": "NGQ3",
+          "title": "Describe the relevant facts of your dispute."
+        },
+        {
+          "type": "comment",
+          "name": "NGQ4",
+          "title": "What remedy are you asking for from the courts?"
+        },
+        {
+          "type": "comment",
+          "name": "NGQ5",
+          "title": "What is your legal bases? (e.g. laws, specific court rules etc.)  "
+        },
+        {
+          "type": "dropdown",
+          "name": "NGQ6",
+          "title": "What courthouse location are you filing this claim?",
+          "choices": [
+            "item1",
+            "item2",
+            "item3"
+          ]
+        }
+      ],
+      "title": "General"
+    },
+    {
+      "name": "NoticeApp",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "NAQ1",
+          "title": "Who are you?",
+          "choices": [
+            {
+              "value": "NAQ1A",
+              "text": "The Plaintiff"
+            },
+            {
+              "value": "NAQ1B",
+              "text": "The Defendant"
+            }
+          ]
+        },
+        {
+          "type": "infotext",
+          "name": "NAQ1Define1",
+          "title": "Plaintiff is the person or entity that started the lawsuit. They are the one making the claim.",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "infotext",
+          "name": "NAQ1Define2",
+          "title": "The Defendant is the one being sued. They are named as the defendant on the Notice of Civil Claim.",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "panel",
+          "name": "NAPanelQ2",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "NAQ2",
+              "title": "What is your full legal name?",
+              "description": "For example, how it appears on your passport or government issued identification."
+            },
+            {
+              "type": "multipletext",
+              "name": "NAQ3",
+              "title": "Name all the people or parties affected by this application",
+              "description": "This usually includes the defendant and plaintiff and the person the order relates to. For example if you are seeking an order for the plaintiff's medical records held by Dr. Smith, you would want to name both the plaintiff and Dr. Smith.",
+              "items": [
+                {
+                  "name": "text1"
+                },
+                {
+                  "name": "text2"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "name": "NAQ4",
+              "title": "Please choose the courthouse you wish to make your application at:",
+              "choices": [
+                {
+                  "value": "NAQ4A",
+                  "text": "dropdown menu of all supreme courthouses in bc"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "name": "NAQ5",
+              "title": "When will you appear before the court to make this application?",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "text",
+              "name": "NAQ5A",
+              "title": "How long do you expect this application to take?",
+              "inputType": "time"
+            },
+            {
+              "type": "comment",
+              "name": "NAQ6",
+              "title": "What order are you asking the court to make?",
+              "description": "If you are asking for multiple orders use separate numbered paragraphs for each. Specify who the order is against. "
+            },
+            {
+              "type": "comment",
+              "name": "NAQ7",
+              "title": "Give a brief summary of facts supporting this application:",
+              "description": "Use numbered paragraphs to organize your facts. Try to use a new paragraph for each new fact."
+            },
+            {
+              "type": "comment",
+              "name": "NAQ8",
+              "title": "What laws or rules are you relying on to support your application?"
+            },
+            {
+              "type": "yesno",
+              "name": "NAQ9",
+              "title": "Are you relying on any 'affidavits' to support your application?"
+            },
+            {
+              "type": "panel",
+              "name": "NAPanelQ10",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "NAQ10Number",
+                  "title": "Affidavit #",
+                  "inputType": "number"
+                },
+                {
+                  "type": "text",
+                  "name": "NAQ10Name",
+                  "startWithNewLine": false,
+                  "title": "Name"
+                },
+                {
+                  "type": "text",
+                  "name": "NAQ10Date",
+                  "startWithNewLine": false,
+                  "title": "Date",
+                  "inputType": "date"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NAQ9} = \"y\"",
+              "title": "Please provide the following information about the `affidavit`:",
+              "description": "This information can usually be found on the top right hand corner of the `affidavit`."
+            },
+            {
+              "type": "panel",
+              "name": "NAPanelQ11",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "NAQ11",
+                  "title": "Are you relying on any other documents already in the court file to support your application?"
+                },
+                {
+                  "type": "comment",
+                  "name": "NAQ12",
+                  "visible": false,
+                  "visibleIf": "{NAQ11} = \"y\"",
+                  "title": "Please describe this document:"
+                },
+                {
+                  "type": "checkbox",
+                  "name": "NAQ13",
+                  "visible": false,
+                  "visibleIf": "{NAQ11} notempty",
+                  "title": "Please select all that apply: This application involves:",
+                  "choices": [
+                    "item1",
+                    "item2",
+                    "item3"
+                  ]
+                },
+                {
+                  "type": "infotext",
+                  "name": "NAComplete",
+                  "visible": false,
+                  "visibleIf": "{NAQ11} notempty",
+                  "title": "Complete",
+                  "titleLocation": "hidden"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NAQ9} notempty"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{NAQ1} notempty"
+        }
+      ],
+      "title": "Notice of Application"
+    },
+    {
+      "name": "NOCCContract",
+      "elements": [
+        {
+          "type": "yesno",
+          "name": "NCQ1",
+          "title": "Did you have a contract or agreement with the defendant?",
+          "description": "Agreement can be a verbal agreement. For example the plumber agreed to fix my kitchen pipes for $50,000."
+        },
+        {
+          "type": "infotext",
+          "name": "NCQ1End",
+          "visible": false,
+          "visibleIf": "{NCQ1} = \"n\"",
+          "title": "END",
+          "titleLocation": "hidden",
+          "messageStyle": "error"
+        },
+        {
+          "type": "panel",
+          "name": "NCPanelQ2",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "NCQ2",
+              "title": "Is your contract/agreement in writing?"
+            },
+            {
+              "type": "panel",
+              "name": "NCPanelQ3",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "NCQ3",
+                  "title": "Did you sign your contract?"
+                },
+                {
+                  "type": "text",
+                  "name": "NCQ4",
+                  "visible": false,
+                  "visibleIf": "{NCQ3} = \"y\"",
+                  "title": "What date did you sign your contract?",
+                  "description": "If you're not sure of the exact date give the approximate date as best you can.",
+                  "inputType": "date"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NCQ2} = \"y\""
+            },
+            {
+              "type": "text",
+              "name": "NCQ5",
+              "visible": false,
+              "visibleIf": "{NCQ2} = \"n\" or {NCQ3} = \"n\"",
+              "title": "When did you make this contract/agreement?",
+              "description": "If you're not sure of the exact date give the approximate date as best you can.",
+              "inputType": "date"
+            },
+            {
+              "type": "panel",
+              "name": "NCPanelQ7",
+              "elements": [
+                {
+                  "type": "panel",
+                  "name": "NCQ6Container",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "name": "NCQ6City",
+                      "title": "City"
+                    },
+                    {
+                      "type": "text",
+                      "name": "NCQ6Prov",
+                      "startWithNewLine": false,
+                      "title": "Province"
+                    }
+                  ],
+                  "title": "Where did you make the contract/agreement?"
+                },
+                {
+                  "type": "comment",
+                  "name": "NCQ7",
+                  "title": "Briefly describe the nature of the contract/agreement:",
+                  "description": "For example: The defendant agreed to hire the claimant as a project manager for the XYZ project for a period of 6 months starting October 2018."
+                },
+                {
+                  "type": "radiogroup",
+                  "name": "NCQ8",
+                  "title": "Which situation best describes your dispute:",
+                  "choices": [
+                    {
+                      "value": "NCQ8A",
+                      "text": "You and [Defendant1] disagree about the term(s) in the contract"
+                    },
+                    {
+                      "value": "NCQ8B",
+                      "text": "You and the defendant disagree about the validity of the contract"
+                    },
+                    {
+                      "value": "NCQ8C",
+                      "text": "The defendant has in your view not fulfilled their obligations under the contract"
+                    },
+                    {
+                      "value": "NCQ8D",
+                      "text": "Other"
+                    }
+                  ]
+                },
+                {
+                  "type": "comment",
+                  "name": "NCQ9",
+                  "visible": false,
+                  "visibleIf": "{NCQ8} = \"NCQ8A\"",
+                  "title": "Describe the disagreement over the term in the contract:"
+                },
+                {
+                  "type": "comment",
+                  "name": "NCQ10",
+                  "visible": false,
+                  "visibleIf": "{NCQ8} = \"NCQ8B\"",
+                  "title": "Describe your disagreement:"
+                },
+                {
+                  "type": "comment",
+                  "name": "NCQ11",
+                  "visible": false,
+                  "visibleIf": "{NCQ8} = \"NCQ8C\"",
+                  "title": "Describe the obligation under the contract that the defendant has not fulfilled and how it has not been fulfilled:"
+                },
+                {
+                  "type": "panel",
+                  "name": "NCPanelQ14",
+                  "elements": [
+                    {
+                      "type": "comment",
+                      "name": "NCQ14",
+                      "title": "Please describe the issue:"
+                    },
+                    {
+                      "type": "yesno",
+                      "name": "NCQ12",
+                      "title": "Have you requested that [defendant] fulfill their obligation?"
+                    },
+                    {
+                      "type": "text",
+                      "name": "NCQ13",
+                      "visible": false,
+                      "visibleIf": "{NCQ12} = \"y\"",
+                      "title": "When did you make this request?",
+                      "inputType": "date"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NCQ8} = \"NCQ8D\""
+                },
+                {
+                  "type": "panel",
+                  "name": "NCPanelQ15",
+                  "elements": [
+                    {
+                      "type": "yesno",
+                      "name": "NCQ15",
+                      "title": "Have you incurred any damages because of the contract dispute?"
+                    },
+                    {
+                      "type": "infotext",
+                      "name": "NCQ15Define1",
+                      "title": "Damages or costs are the impact you have suffered as a result of the defendant's wrong doing.  For example if someone injured you your damages might include medical bills or lost income. ",
+                      "titleLocation": "hidden"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NCQ16",
+                      "visible": false,
+                      "visibleIf": "{NCQ15} = \"y\"",
+                      "title": "Please describe these damages:",
+                      "description": "For example, because of the contract, I turned down another employment opportunity and thereby financially suffered."
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NCQ8} = \"NCQ8A\" or {NCQ8} = \"NCQ8B\" or {NCQ8} = \"NCQ8C\" or {NCQ12} notempty"
+                },
+                {
+                  "type": "panel",
+                  "name": "NCPanelQ17",
+                  "elements": [
+                    {
+                      "type": "comment",
+                      "name": "NCQ17",
+                      "title": "Please provide any other relevant facts you wish the court to know."
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NCQ18",
+                      "title": "What remedy are you asking for from the courts?"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NCQ19",
+                      "title": "What is your legal bases? (e.g. laws, specific court rules etc.)?"
+                    },
+                    {
+                      "type": "dropdown",
+                      "name": "NCQ20",
+                      "title": "What courthouse location are you filing this claim?",
+                      "choices": [
+                        "item1",
+                        "item2",
+                        "item3"
+                      ]
+                    },
+                    {
+                      "type": "infotext",
+                      "name": "NCComplete",
+                      "title": "Complete",
+                      "titleLocation": "hidden"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NCQ15} notempty"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NCQ2} = \"n\"  or {NCQ3} notempty"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{NCQ1} = \"y\""
+        }
+      ],
+      "visible": false,
+      "visibleIf": "{NOCCFilterQ2} = \"NOCCFilterQ2C\"",
+      "title": "Contract"
+    },
+    {
+      "name": "NOCCDebts",
+      "elements": [
+        {
+          "type": "yesno",
+          "name": "NDQ1",
+          "title": "Is money owed to you by [Defendant1]?"
+        },
+        {
+          "type": "infotext",
+          "name": "NDQ1End",
+          "visible": false,
+          "visibleIf": "{NDQ1} = \"n\"",
+          "title": "END",
+          "titleLocation": "hidden",
+          "messageStyle": "error"
+        },
+        {
+          "type": "panel",
+          "name": "NDPanelQ2",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "NDQ2",
+              "title": "[Defendant1] owes you money for:",
+              "choices": [
+                {
+                  "value": "NDQ2A",
+                  "text": "Services you provided"
+                },
+                {
+                  "value": "NDQ2B",
+                  "text": "A loan you lent them"
+                },
+                {
+                  "value": "NDQ2C",
+                  "text": "Goods you sold them"
+                }
+              ]
+            },
+            {
+              "type": "infotext",
+              "name": "NSQ2Define1",
+              "title": "Services would include work done by one person for another. For example, being hired to paint someone's house or to give them swimming lessons.",
+              "titleLocation": "hidden"
+            },
+            {
+              "type": "infotext",
+              "name": "NDQ2Define2",
+              "title": "Goods would include items such as a car, a TV or furniture. Animals are considered goods.",
+              "titleLocation": "hidden"
+            },
+            {
+              "type": "panel",
+              "name": "NDPanelQ3",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "NDQ3",
+                  "title": "Were the services you provided at the request of [defendant]?"
+                },
+                {
+                  "type": "panel",
+                  "name": "NDPanelQ4",
+                  "elements": [
+                    {
+                      "type": "comment",
+                      "name": "NDPanelQ5",
+                      "title": "Briefly describe the service you provided:",
+                      "description": "For example, I was hired by the defendant to reroof their home. I rendered these services but have not been paid fully for them."
+                    },
+                    {
+                      "type": "text",
+                      "name": "NDQ6",
+                      "title": "When did you provide the service?",
+                      "inputType": "date"
+                    },
+                    {
+                      "type": "text",
+                      "name": "NDQ7",
+                      "title": "Where did you provide the service?"
+                    },
+                    {
+                      "type": "helptext",
+                      "name": "NDQ6Q1",
+                      "title": "What if I don't know the exact location?",
+                      "titleLocation": "hidden",
+                      "body": "If you do not know the exact location, you may right \"around\". For example, \"around 29th avenue and main street.\""
+                    },
+                    {
+                      "type": "yesno",
+                      "name": "NDQ15",
+                      "title": "Did you agree on the price for the service?"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NDQ3} notempty"
+                },
+                {
+                  "type": "text",
+                  "name": "NDQ16",
+                  "visible": false,
+                  "visibleIf": "{NDQ15} = \"y\"",
+                  "title": "What price?",
+                  "inputType": "number",
+                  "placeHolder": "$"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NDQ2} = \"NDQ2A\""
+            },
+            {
+              "type": "panel",
+              "name": "NDPanelQ7",
+              "elements": [
+                {
+                  "type": "comment",
+                  "name": "ADQ7",
+                  "title": "How much did you loan to [Defendant1]?",
+                  "description": "Describe the amount that was to be paid, when and how it was to be paid. Include any other relevant details about the agreed upon payment."
+                },
+                {
+                  "type": "helptext",
+                  "name": "NDQ7Q1",
+                  "title": "What if we didn't agree on a price?",
+                  "titleLocation": "hidden",
+                  "body": "If no set price was decided on describe how the service or goods was to be paid. For example, you provided an estimate price of $6000 for the repairs but agreed that the final price would be determined once work was completed. You did a final price assessment on October 25, 2017 and sent a the final invoice for $7000 to the Defendant. "
+                },
+                {
+                  "type": "text",
+                  "name": "NDQ8",
+                  "title": "When did you give [Defendant1] this loan?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "text",
+                  "name": "NDQ10",
+                  "title": "Where did you give [Defendant1] the loan?"
+                },
+                {
+                  "type": "helptext",
+                  "name": "NDQ10Q1",
+                  "title": "What if I don't know the exact location?",
+                  "titleLocation": "hidden",
+                  "body": "If you do not know the exact location, you may right \"around\"."
+                },
+                {
+                  "type": "yesno",
+                  "name": "NDQ32",
+                  "title": "Did you agree on a date the loan was to be repaid?"
+                },
+                {
+                  "type": "text",
+                  "name": "NDQ11",
+                  "visible": false,
+                  "visibleIf": "{NDQ32} = \"y\"",
+                  "title": "When was the loan to be repaid?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "yesno",
+                  "name": "NDQ12",
+                  "visible": false,
+                  "visibleIf": "{NDQ32} notempty",
+                  "title": "Was there an agreed upon interest rate on the loan?"
+                },
+                {
+                  "type": "comment",
+                  "name": "NDQ13",
+                  "visible": false,
+                  "visibleIf": "{NDQ12} = \"y\"",
+                  "title": "Please provide the details of the interest rate:"
+                },
+                {
+                  "type": "panel",
+                  "name": "NDPanelQ14",
+                  "elements": [
+                    {
+                      "type": "comment",
+                      "name": "NDQ14",
+                      "title": "Describe any other relevant terms of the loan:",
+                      "description": "Describe the amount that was to be paid, when and how it was to be paid. Include any other relevant details about the agreed upon payment."
+                    },
+                    {
+                      "type": "helptext",
+                      "name": "NDQ14Q1",
+                      "title": "What if we didn't agree on a price?",
+                      "titleLocation": "hidden",
+                      "body": "If no set price was decided on describe how the service or goods was to be paid. For example, you provided an estimate price of $6000 for the repairs but agreed that the final price would be determined once work was completed. You did a final price assessment on October 25, 2017 and sent a the final invoice for $7000 to the Defendant. "
+                    },
+                    {
+                      "type": "yesno",
+                      "name": "NDQ33",
+                      "title": "Did [defendant] fail to meet the terms of the loan?",
+                      "description": "In other words are there terms you both agreed to that the other party is not following?"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NDQ22",
+                      "visible": false,
+                      "visibleIf": "{NDQ33} = \"y\"",
+                      "title": "Explain:"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NDQ12} notempty"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NDQ2} = \"NDQ2B\""
+            },
+            {
+              "type": "panel",
+              "name": "NDPanelQ17",
+              "elements": [
+                {
+                  "type": "comment",
+                  "name": "NDQ17",
+                  "title": "Briefly describe the goods you sold to [Defendant1]:",
+                  "description": "For example, I sold to the Defendant a 2015 Toyota Yaris.",
+                  "rows": 2
+                },
+                {
+                  "type": "text",
+                  "name": "NDQ18",
+                  "title": "When did you provide these goods?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "text",
+                  "name": "NDQ19",
+                  "title": "Where did you provide these goods?"
+                },
+                {
+                  "type": "helptext",
+                  "name": "NDQ19Q1",
+                  "title": "What if I don't know the exact location?",
+                  "titleLocation": "hidden",
+                  "body": "If you do not know the exact location, you may right \"around\"."
+                },
+                {
+                  "type": "yesno",
+                  "name": "NDQ20",
+                  "title": "Did you agree on a price for the goods?"
+                },
+                {
+                  "type": "text",
+                  "name": "NDQ21",
+                  "visible": false,
+                  "visibleIf": "{NDQ20} = \"y\"",
+                  "title": "What price?",
+                  "inputType": "number",
+                  "placeHolder": "$"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NDQ2} = \"NDQ2C\""
+            },
+            {
+              "type": "panel",
+              "name": "NDPanelQ23",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "NDQ23",
+                  "title": "Did [Defendant1] partially pay you?"
+                },
+                {
+                  "type": "panel",
+                  "name": "NDPanelQ24",
+                  "elements": [
+                    {
+                      "type": "comment",
+                      "name": "NDQ24",
+                      "title": "How much did [Defendant1] partially pay you?",
+                      "description": "Describe the amount that was paid and any other relevant details about the payment."
+                    },
+                    {
+                      "type": "helptext",
+                      "name": "NDQ24Q1",
+                      "title": "What if we didn't agree on a price?",
+                      "titleLocation": "hidden",
+                      "body": "If no set price was decided on describe how the service or goods was to be paid. For example, you provided an estimate price of $6000 for the repairs but agreed that the final price would be determined once work was completed. You did a final price assessment on October 25, 2017 and sent a the final invoice for $7000 to the Defendant. "
+                    },
+                    {
+                      "type": "text",
+                      "name": "NDQ25",
+                      "title": "When did [Defendant1] make this payment to you?",
+                      "inputType": "date"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NDQ23} = \"y\""
+                }
+              ],
+              "visible": false,
+              "visibleIf": "({NDQ2} = \"NDQ2A\" and {NDQ15} notempty) or ({NDQ2} = \"NDQ2C\" and {NDQ20} notempty) or ({NDQ2} = \"NDQ2B\" and {NDQ33} = \"y\")"
+            },
+            {
+              "type": "panel",
+              "name": "NDPanelQ26",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "NDQ26",
+                  "title": "How much does [defendant]  still owe you?",
+                  "inputType": "number",
+                  "placeHolder": "$"
+                },
+                {
+                  "type": "yesno",
+                  "name": "NDQ27",
+                  "title": "Have you made demands of [Defendant1] to repay you?"
+                },
+                {
+                  "type": "panel",
+                  "name": "NDPanelQ28",
+                  "elements": [
+                    {
+                      "type": "comment",
+                      "name": "NDQ28",
+                      "title": "Please provide any other relevant facts you wish the court to know."
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NDQ29",
+                      "title": "What remedy are you asking for from the courts?"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NDQ30",
+                      "title": "What is your legal bases? (e.g. laws, specific court rules etc.)?"
+                    },
+                    {
+                      "type": "dropdown",
+                      "name": "NDQ31",
+                      "title": "What courthouse location are you filing this claim?",
+                      "choices": [
+                        "item1",
+                        "item2",
+                        "item3"
+                      ]
+                    },
+                    {
+                      "type": "infotext",
+                      "name": "NDComplete",
+                      "title": "Complete",
+                      "titleLocation": "hidden"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NDQ27} notempty"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "(({NDQ2} = \"NDQ2A\" and {NDQ15} notempty) or ({NDQ2} = \"NDQ2C\" and {NDQ20} notempty) or ({NDQ2} = \"NDQ2B\" and {NDQ33} = \"y\") and {NDQ23} notempty) or ({NDQ2} = \"NDQ2B\" and {NDQ33} = \"n\")"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{NDQ1} = \"y\""
+        }
+      ],
+      "visible": false,
+      "visibleIf": "{NOCCFilterQ2} = \"NOCCFilterQ2E\"",
+      "title": "Debts (money owed)"
+    },
+    {
+      "name": "NOCCMVA",
+      "elements": [
+        {
+          "type": "yesno",
+          "name": "NMQ1",
+          "title": "Were you involved in a car accident?"
+        },
+        {
+          "type": "infotext",
+          "name": "NMQ1End",
+          "visible": false,
+          "visibleIf": "{NMQ1} = \"n\"",
+          "title": "END",
+          "titleLocation": "hidden",
+          "messageStyle": "error"
+        },
+        {
+          "type": "panel",
+          "name": "NMPanelQ4",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "NMQ4",
+              "title": "You were:",
+              "choices": [
+                {
+                  "value": "NMQ4A",
+                  "text": "Driving a car involved in the accident"
+                },
+                {
+                  "value": "NMQ4B",
+                  "text": "A passenger of a car involved in the accident"
+                },
+                {
+                  "value": "NMQ4C",
+                  "text": "A cyclist involved in the accident"
+                },
+                {
+                  "value": "NMQ4D",
+                  "text": "A pedestrian involved in the accident"
+                },
+                {
+                  "value": "NMQ4E",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "NMPanelQ9",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "NMQ9",
+                  "title": "Where did the accident take place?",
+                  "placeHolder": "Fill in location"
+                },
+                {
+                  "type": "text",
+                  "name": "NMQ10",
+                  "title": "When did the accident occur?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "radiogroup",
+                  "name": "NMQ11",
+                  "title": "[Defendant1] is:",
+                  "choices": [
+                    {
+                      "value": "NMQ11A",
+                      "text": "The driver of the other car"
+                    },
+                    {
+                      "value": "NMQ11B",
+                      "text": "The driver of the car you were in"
+                    },
+                    {
+                      "value": "NMQ11C",
+                      "text": "A cyclist involved in the accident"
+                    },
+                    {
+                      "value": "NMQ11D",
+                      "text": "Other"
+                    }
+                  ]
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NMQ4} notempty"
+            },
+            {
+              "type": "panel",
+              "name": "NMPanelQ15",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "NMQ15",
+                  "title": "The defendant is the driver and owner of the vehicle involved in the accident?"
+                },
+                {
+                  "type": "panel",
+                  "name": "NMPanelQ17",
+                  "elements": [
+                    {
+                      "type": "yesno",
+                      "name": "NMQ17",
+                      "title": "At this time this application is only for claims with a single defendant. Do you wish to proceed with this application?"
+                    },
+                    {
+                      "type": "infotext",
+                      "name": "NMQ17End",
+                      "visible": false,
+                      "visibleIf": "{NMQ17} = \"n\"",
+                      "title": "END",
+                      "titleLocation": "hidden",
+                      "messageStyle": "error"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NMQ15} = \"n\""
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NMQ11} = \"NMQ11A\" or {NMQ11} = \"NMQ11B\""
+            },
+            {
+              "type": "panel",
+              "name": "NMPanelQ19",
+              "elements": [
+                {
+                  "type": "comment",
+                  "name": "NMQ19",
+                  "title": "Please briefly describe the accident:",
+                  "description": "Provide information on what direction the people involved in the accident were traveling and how the accident occurred. For example: the plaintiff was travelling south in the inside lane on Main Street. When the plaintiff approached the intersection of Main Street and 15th Avenue, the defendant, proceeding east on 15th Avenue, made a left-hand turn onto Main Street, without signal or warning to the plaintiff, in front of the plaintiff’s motor vehicle."
+                },
+                {
+                  "type": "yesno",
+                  "name": "NMQ20",
+                  "title": "Was the collision caused or contributed to by the negligence of the defendant?"
+                },
+                {
+                  "type": "panel",
+                  "name": "NMPanelQ22",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "name": "NMQ22",
+                      "title": "What cause are you claiming?"
+                    },
+                    {
+                      "type": "checkbox",
+                      "name": "NMQ25",
+                      "title": "Choose all that apply. You are claiming judgement against the defendant for:",
+                      "hasOther": true,
+                      "choices": [
+                        {
+                          "value": "NMQ25A",
+                          "text": "General damages for pain, suffering, loss of amenities, and loss of enjoyment of life"
+                        },
+                        {
+                          "value": "NMQ25B",
+                          "text": "Damages for past lost income and loss of opportunity to earn income"
+                        },
+                        {
+                          "value": "NMQ25C",
+                          "text": "Damages for future loss of income and future earning capacity"
+                        },
+                        {
+                          "value": "NMQ25D",
+                          "text": "Damages for future cost of care"
+                        },
+                        {
+                          "value": "NMQ25E",
+                          "text": "Damages for loss of house maintenance capacity"
+                        },
+                        {
+                          "value": "NMQ25F",
+                          "text": "Special damages"
+                        },
+                        {
+                          "value": "NMQ25G",
+                          "text": "Costs of this action"
+                        },
+                        {
+                          "value": "NMQ25H",
+                          "text": "Interest"
+                        },
+                        {
+                          "value": "NMQ25I",
+                          "text": "Other relief as the judge decides is fair"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NMQ36",
+                      "title": "Legal basis:"
+                    },
+                    {
+                      "type": "infotext",
+                      "name": "NMComplete",
+                      "title": "Complete",
+                      "titleLocation": "hidden"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NMQ20} notempty"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NMQ11} = \"NMQ11C\" or {NMQ11} = \"NMQ11D\"  or ({NMQ11} = \"NMQ11A\" and {NMQ15} = \"y\") or ({NMQ11} = \"NMQ11B\" and {NMQ15} = \"y\") or ({NMQ11} = \"NMQ11A\" and {NMQ15} = \"n\" and {NMQ17} = \"y\") or ({NMQ11} = \"NMQ11B\" and {NMQ15} = \"n\" and {NMQ17} = \"y\")"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{NMQ1} = \"y\""
+        }
+      ],
+      "visible": false,
+      "visibleIf": "{NOCCFilterQ2} = \"NOCCFilterQ2B\"",
+      "title": "Motor Vehicle Accident"
+    },
+    {
+      "name": "NOCCMVA2",
+      "elements": [
+        {
+          "type": "yesno",
+          "name": "MTQ1",
+          "title": "Were you involved in a motor vehicle accident?"
+        },
+        {
+          "type": "infotext",
+          "name": "MTQ1End",
+          "visible": false,
+          "visibleIf": "{MTQ1} = \"n\"",
+          "title": "END",
+          "titleLocation": "hidden",
+          "messageStyle": "error"
+        },
+        {
+          "type": "panel",
+          "name": "MTPanelQ2",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "MTQ2",
+              "title": "You were...",
+              "choices": [
+                {
+                  "value": "MTQ2A",
+                  "text": "Driving a vehicle involved in the accident"
+                },
+                {
+                  "value": "MTQ2B",
+                  "text": "A passenger of a vehicle involved in the accident"
+                },
+                {
+                  "value": "MTQ2C",
+                  "text": "A cyclist involved in the accident"
+                },
+                {
+                  "value": "MTQ2D",
+                  "text": "A pedestrian involved in the accident"
+                },
+                {
+                  "value": "MTQ2E",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "MTPanelQ3",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "MTQ3",
+                  "title": "Where did the accident take place?",
+                  "placeHolder": "Fill in location"
+                },
+                {
+                  "type": "text",
+                  "name": "MTQ4",
+                  "title": "When did the accident occur?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "radiogroup",
+                  "name": "MTQ5",
+                  "title": "[Defendant1] is...",
+                  "choices": [
+                    {
+                      "value": "MTQ5A",
+                      "text": "The driver of the other vehicle"
+                    },
+                    {
+                      "value": "MTQ5B",
+                      "text": "The driver of the vehicle you were in"
+                    },
+                    {
+                      "value": "MTQ5C",
+                      "text": "A cyclist involved in the accident"
+                    },
+                    {
+                      "value": "MTQ5D",
+                      "text": "Pedestrian involved in the accident"
+                    },
+                    {
+                      "value": "MTQ5E",
+                      "text": "Other"
+                    }
+                  ]
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{MTQ2} notempty"
+            },
+            {
+              "type": "panel",
+              "name": "MTPanelQ6",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "MTQ6",
+                  "title": "Single defendant?"
+                },
+                {
+                  "type": "infotext",
+                  "name": "MTQ6End",
+                  "visible": false,
+                  "visibleIf": "{MTQ6} = \"n\"",
+                  "title": "END",
+                  "titleLocation": "hidden",
+                  "messageStyle": "error"
+                },
+                {
+                  "type": "panel",
+                  "name": "MTPanelQ7",
+                  "elements": [
+                    {
+                      "type": "comment",
+                      "name": "MTQ7",
+                      "title": "Describe the accident:"
+                    },
+                    {
+                      "type": "yesno",
+                      "name": "MTQ8",
+                      "title": "Was the collision caused or contributed to by negligence of the defendant?"
+                    },
+                    {
+                      "type": "panel",
+                      "name": "MTPanelQ9",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "name": "MTQ9",
+                          "title": "What are you claiming?"
+                        },
+                        {
+                          "type": "checkbox",
+                          "name": "MTQ10",
+                          "title": "Injuries: Choose all that apply:",
+                          "choices": [
+                            {
+                              "value": "MTQ10A",
+                              "text": "Interest"
+                            },
+                            {
+                              "value": "MTQ10B",
+                              "text": "Damage for future loss of income and future earning capacity"
+                            },
+                            {
+                              "value": "MTQ10C",
+                              "text": "Damages for future cost of care"
+                            },
+                            {
+                              "value": "MTQ10D",
+                              "text": "Damages for loss of house maintenance capacity"
+                            },
+                            {
+                              "value": "MTQ10E",
+                              "text": "Damage for past lost income and loss opportunity to earn income"
+                            },
+                            {
+                              "value": "MTQ10F",
+                              "text": "Special damages"
+                            },
+                            {
+                              "value": "MTQ10G",
+                              "text": "General damages for pain, suffering, loss of amenities, and loss of enjoyment of life"
+                            },
+                            {
+                              "value": "MTQ10H",
+                              "text": "Other relief as the judge decide is fair"
+                            },
+                            {
+                              "value": "MTQ10I",
+                              "text": "Cost of this action"
+                            },
+                            {
+                              "value": "MTQ10J",
+                              "text": "Other"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "MTQE2",
+                          "title": "Amount",
+                          "inputType": "number",
+                          "placeHolder": "$"
+                        }
+                      ],
+                      "visible": false,
+                      "visibleIf": "{MTQ8} notempty"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{MTQ6} = \"y\""
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{MTQ5} notempty"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{MTQ1} = \"y\""
+        }
+      ],
+      "visible": false,
+      "visibleIf": "{NOCCFilterQ2} = \"NOCCFilterQ2B\"",
+      "title": "MVA 2"
+    },
+    {
+      "name": "NOCCPI",
+      "elements": [
+        {
+          "type": "yesno",
+          "name": "NPQ1",
+          "title": "Did you suffer injuries because of [the defendant]'s actions or negligence?",
+          "description": "This could include actions that are intentional such as hitting someone or not intentionally such as carelessly throwing a baseball into a crowd. It could also include the failure to do an action such as clean up the slip on the store floor where people are walking."
+        },
+        {
+          "type": "infotext",
+          "name": "NPQ1End",
+          "visible": false,
+          "visibleIf": "{NPQ1} = \"n\"",
+          "title": "END",
+          "titleLocation": "hidden",
+          "messageStyle": "error"
+        },
+        {
+          "type": "panel",
+          "name": "NPPanelQ2",
+          "elements": [
+            {
+              "type": "text",
+              "name": "NPQ2",
+              "title": "On what date did the injury occur?",
+              "inputType": "date"
+            },
+            {
+              "type": "radiogroup",
+              "name": "NPQ3",
+              "title": "Where did the injury occur?",
+              "choices": [
+                {
+                  "value": "NPQ3A",
+                  "text": "At [defendant]'s home/property"
+                },
+                {
+                  "value": "NPQ3B",
+                  "text": "At [defendant]'s place of work or business"
+                },
+                {
+                  "value": "NPQ3C",
+                  "text": "At a public space"
+                },
+                {
+                  "value": "NPQ3D",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "NPPanelQ3a",
+              "elements": [
+                {
+                  "type": "address",
+                  "name": "NPQ3a",
+                  "title": "What is the exact address of the location?"
+                },
+                {
+                  "type": "comment",
+                  "name": "NPQ4",
+                  "title": "Describe how the injury occurred:",
+                  "description": "Give a short and accurate account of what happened. For example, you were walking through the store, owned by the defendant, when you slipped and fell onto your back. The fall was due to a liquid spill in the middle of the shopping aisle. There was no sign or warning to indicate there was a spill. You did not see the liquid before you fell. Due to the fall you suffered injury."
+                },
+                {
+                  "type": "checkbox",
+                  "name": "NPQ5",
+                  "title": "Injuries caused you:",
+                  "description": "Pick all that apply.",
+                  "hasOther": true,
+                  "choices": [
+                    {
+                      "value": "NPQ5A",
+                      "text": "Pain, suffering, loss of amenities, and loss of enjoyment of life"
+                    },
+                    {
+                      "value": "NPQ5B",
+                      "text": "Past lost income and loss of opportunity to earn income"
+                    },
+                    {
+                      "value": "NPQ5C",
+                      "text": "Future loss of income and future earning capacity"
+                    },
+                    {
+                      "value": "NPQ5D",
+                      "text": "Future cost of care"
+                    },
+                    {
+                      "value": "NPQ5E",
+                      "text": "Loss of house maintenance capacity"
+                    },
+                    {
+                      "value": "NPQ5F",
+                      "text": "Out of pocket expenses"
+                    }
+                  ],
+                  "otherText": "Other"
+                },
+                {
+                  "type": "helptext",
+                  "name": "NPQ5Q1",
+                  "title": "I'm unsure what injuries to pick.",
+                  "titleLocation": "hidden",
+                  "body": "If you are unsure about the extent of your damages it is best if you speak to a lawyer and get legal advice. In general you may be able to claim compensation if for example the injury caused you to loss wages, incur medical expenses and caused you pain and suffering."
+                },
+                {
+                  "type": "infotext",
+                  "name": "NPQ5FDefine1",
+                  "title": "Out of pocket expenses could cover any expense you had due to the injury such as medical treatment, or medications.",
+                  "titleLocation": "hidden"
+                },
+                {
+                  "type": "comment",
+                  "name": "NPQ6",
+                  "title": "Please describe:"
+                },
+                {
+                  "type": "comment",
+                  "name": "NPQ7",
+                  "title": "Please provide any other relevant facts you wish the court to know."
+                },
+                {
+                  "type": "comment",
+                  "name": "NPQ8",
+                  "title": "What remedy are you asking for from the courts?"
+                },
+                {
+                  "type": "comment",
+                  "name": "NPQ9",
+                  "title": "What is your legal bases? (e.g. laws, specific court rules etc.)"
+                },
+                {
+                  "type": "dropdown",
+                  "name": "NPQ10",
+                  "title": "What courthouse location are you filing this claim?",
+                  "choices": [
+                    "item1",
+                    "item2",
+                    "item3"
+                  ]
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NPQ3} notempty"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{NPQ1} = \"y\""
+        }
+      ],
+      "visible": false,
+      "visibleIf": "{NOCCFilterQ2} = \"NOCCFilterQ2A\" ",
+      "title": "Personal Injury"
+    },
+    {
+      "name": "NOCCUnhappy",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "NUQ0",
+          "title": "You are:",
+          "choices": [
+            {
+              "value": "NUQ0A",
+              "text": "unhappy about a service [the Defendant] promised to provide to you"
+            },
+            {
+              "value": "NUQ0B",
+              "text": "unhappy with a good you bought (or was promised) from [the defendant]"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "NUPanelQ1",
+          "elements": [
+            {
+              "type": "comment",
+              "name": "NUQ1",
+              "title": "Describe service [Defendant] agreed to provide:",
+              "description": "For example, the defendant was hired by the claimant to reroof their home. "
+            },
+            {
+              "type": "helptext",
+              "name": "NUQ1Q1",
+              "title": "Do I need to have a written agreement?",
+              "titleLocation": "hidden",
+              "body": "No, the agreement could be oral. An agreement is usually binding one there is an exchange of promises. For example Anne promise to pay the hairdresser a set amount and they promise to cut her hair, or Bob will pay the consultant $6,000 for their services consulting on a business opportunity."
+            },
+            {
+              "type": "text",
+              "name": "NUQ2",
+              "title": "When did you make an agreement for the service?",
+              "inputType": "date"
+            },
+            {
+              "type": "address",
+              "name": "NUQ3",
+              "title": "Where did you make an agreement for the service?"
+            },
+            {
+              "type": "yesno",
+              "name": "NUQ4",
+              "title": "Did you agree upon a price for the service?"
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ5",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "NUQ5",
+                  "title": "How much was that price?",
+                  "inputType": "number",
+                  "placeHolder": "$0.00"
+                },
+                {
+                  "type": "yesno",
+                  "name": "NUQ6",
+                  "title": "Did you pay this full price to [defendant]?"
+                },
+                {
+                  "type": "text",
+                  "name": "NUQ9a",
+                  "visible": false,
+                  "visibleIf": "{NUQ6} = \"y\"",
+                  "title": "When did you pay this?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "panel",
+                  "name": "NUPanelQ7",
+                  "elements": [
+                    {
+                      "type": "yesno",
+                      "name": "NUQ7",
+                      "visible": false,
+                      "visibleIf": "{NUQ6} = \"n\"",
+                      "title": "Did you partially pay [defendant]?"
+                    },
+                    {
+                      "type": "panel",
+                      "name": "NUPanelQ9",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "name": "NUQ9",
+                          "title": "How much did you pay?",
+                          "inputType": "number",
+                          "placeHolder": "$0.00"
+                        },
+                        {
+                          "type": "text",
+                          "name": "NUQ11",
+                          "title": "When did you pay this [defendant]?",
+                          "inputType": "date"
+                        },
+                        {
+                          "type": "text",
+                          "name": "NUQ10",
+                          "title": "How much remains to pay the [Defendant]?",
+                          "inputType": "number",
+                          "placeHolder": "$0.00"
+                        }
+                      ],
+                      "visible": false,
+                      "visibleIf": "{NUQ7} = \"y\""
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NUQ6} = \"n\""
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NUQ4} = \"y\""
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ8",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "NUQ8",
+                  "title": "Did you pay [Defendant1]?"
+                },
+                {
+                  "type": "panel",
+                  "name": "NUPanelQ8a",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "name": "NUQ8a",
+                      "title": "How much did you pay?",
+                      "inputType": "number",
+                      "placeHolder": "$0.00"
+                    },
+                    {
+                      "type": "text",
+                      "name": "NUQ8b",
+                      "title": "When did you pay this?",
+                      "inputType": "date"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NUQ8} = \"y\""
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NUQ4} = \"n\""
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ12",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "NUQ12",
+                  "title": "Chose which you think best describes your situation:",
+                  "choices": [
+                    {
+                      "value": "NUQ12A",
+                      "text": "The service was not completed"
+                    },
+                    {
+                      "value": "NUQ12B",
+                      "text": "The service was not according to your agreement"
+                    },
+                    {
+                      "value": "NUQ12C",
+                      "text": "The service was not of quality"
+                    },
+                    {
+                      "value": "NUQ12D",
+                      "text": "The defendant in performing service caused me or my property damage"
+                    },
+                    {
+                      "value": "NUQ12E",
+                      "text": "Other"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "NUPanelQ13",
+                  "elements": [
+                    {
+                      "type": "comment",
+                      "name": "NUQ13",
+                      "title": "Please give more detail to your selections:"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NUQ14",
+                      "title": "Please provide any other relevant facts you wish the court to know."
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NUQ15",
+                      "title": "What remedy are you asking for from the courts?"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NUQ16",
+                      "title": "What is your legal bases? (e.g. laws, specific court rules etc.)  "
+                    },
+                    {
+                      "type": "dropdown",
+                      "name": "NUQ17",
+                      "title": "What courthouse location are you filing this claim?",
+                      "choices": [
+                        "item1",
+                        "item2",
+                        "item3"
+                      ]
+                    },
+                    {
+                      "type": "infotext",
+                      "name": "NUQ17Complete",
+                      "title": "Complete",
+                      "titleLocation": "hidden"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NUQ12} notempty"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "({NUQ4} = \"y\" and {NUQ6} = \"y\") or ({NUQ4} = \"y\" and {NUQ6} = \"n\" and {NUQ7} notempty) or ({NUQ4} = \"n\" and {NUQ8} notempty)"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{NUQ0} = \"NUQ0A\""
+        },
+        {
+          "type": "panel",
+          "name": "NUPanelQ18",
+          "elements": [
+            {
+              "type": "comment",
+              "name": "NUQ18",
+              "title": "Describe the goods you bought from [Defendant1]:",
+              "description": "For example: a 2008 Toyota Yaris, or antique dining room table set that included 6 chairs.",
+              "rows": 2
+            },
+            {
+              "type": "text",
+              "name": "NUQ19",
+              "title": "When did you buy the goods from [Defendant1]?",
+              "description": "If you can't remember the exact date or it occurred on a range of dates give your best estimation.",
+              "placeHolder": "yyyy-mm-dd"
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ20",
+              "elements": [
+                {
+                  "type": "helptext",
+                  "name": "NUQ20Q1",
+                  "title": "What if I bought them online?",
+                  "titleLocation": "hidden",
+                  "body": "If you bought them online, write the address you were to pick good up at or they were to be delivered to."
+                },
+                {
+                  "type": "text",
+                  "name": "NUQ20Store",
+                  "title": "Store Name"
+                },
+                {
+                  "type": "address",
+                  "name": "NUQ20Address",
+                  "title": "Address"
+                }
+              ],
+              "title": "Where did you buy the goods from [Defendant1]?",
+              "description": "If you bought goods in a store provide the name and address of that store."
+            },
+            {
+              "type": "checkbox",
+              "name": "NUQ21",
+              "title": "What was wrong with the goods?",
+              "choices": [
+                {
+                  "value": "NUQ21A",
+                  "text": "The goods did not meet the description or sample provided by the Defendant."
+                },
+                {
+                  "value": "NUQ21B",
+                  "text": "The goods were not reasonably fit for the purpose they were to have."
+                },
+                {
+                  "value": "NUQ21C",
+                  "text": "The goods did not last for a reasonable time."
+                },
+                {
+                  "value": "NUQ21D",
+                  "text": "Never received them"
+                },
+                {
+                  "value": "NUQ21E",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "infotext",
+              "name": "NUQ21BDefine1",
+              "title": "Reasonably fit - in a good enough/working condition as you would expect them to be in. For example a 20 year old car may need new parts but you expect in running condition if it was advertised as a working car.",
+              "titleLocation": "hidden"
+            },
+            {
+              "type": "infotext",
+              "name": "NUQ21CDefine1",
+              "title": "Reasonable time - the amount of time a person would expect this specific good to last, considering it's age and condition.",
+              "titleLocation": "hidden"
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ25",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "NUQ25",
+                  "title": "When did you discover the good did not meet the description or sample?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "comment",
+                  "name": "NUQ30",
+                  "title": "Please explain:"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NUQ21} contains [\"NUQ21A\"]"
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ26",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "NUQ26",
+                  "title": "When did you discover the goods were not reasonably fit for the purpose they were to have?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "comment",
+                  "name": "NUQ31",
+                  "title": "Please explain:"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NUQ21} contains [\"NUQ21B\"]"
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ27",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "NUQ27",
+                  "title": "When did you discover the goods did not last for a reasonable time?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "comment",
+                  "name": "NUQ32",
+                  "title": "Please explain:"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NUQ21} contains [\"NUQ21C\"]"
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ22",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "NUQ22",
+                  "title": "Did the Defendant agree to deliver or make available the goods to you on a specific day?"
+                },
+                {
+                  "type": "text",
+                  "name": "NUQ23",
+                  "visible": false,
+                  "visibleIf": "{NUQ22} = \"y\"",
+                  "title": "When where the goods to be delivered?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "comment",
+                  "name": "NUQ24",
+                  "visible": false,
+                  "visibleIf": "{NUQ22} notempty",
+                  "title": "Provide any relevant details on what happened:"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NUQ21} contains [\"NUQ21D\"]"
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ29",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "NUQ29",
+                  "title": "[Other] When did you discover this?",
+                  "inputType": "date"
+                },
+                {
+                  "type": "comment",
+                  "name": "NUQ34",
+                  "title": "Please explain:"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NUQ21} contains [\"NUQ21E\"]"
+            },
+            {
+              "type": "panel",
+              "name": "NUPanelQ35",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "NUQ35",
+                  "title": "Did you pay for the goods?"
+                },
+                {
+                  "type": "panel",
+                  "name": "NUPanelQ36",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "name": "NUQ36",
+                      "title": "How much did you pay [Defendant1]?",
+                      "inputType": "number",
+                      "placeHolder": "$0.00"
+                    },
+                    {
+                      "type": "text",
+                      "name": "NUQ37",
+                      "title": "When did you pay [Defendant1]?",
+                      "inputType": "date"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NUQ35} = \"y\""
+                },
+                {
+                  "type": "panel",
+                  "name": "NUPanelQ13b",
+                  "elements": [
+                    {
+                      "type": "comment",
+                      "name": "NUQ13b",
+                      "title": "Please give more detail to your selections:"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NUQ14b",
+                      "title": "Please provide any other relevant facts you wish the court to know:"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NUQ15b",
+                      "title": "What remedy are you asking for from the courts?"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "NUQ16b",
+                      "title": "What is your legal bases? (e.g. laws, specific court rules etc.)  "
+                    },
+                    {
+                      "type": "dropdown",
+                      "name": "NUQ17b",
+                      "title": "What courthouse location are you filing this claim?",
+                      "choices": [
+                        "item1",
+                        "item2",
+                        "item3"
+                      ]
+                    },
+                    {
+                      "type": "infotext",
+                      "name": "NUQ13bComplete",
+                      "title": "Complete",
+                      "titleLocation": "hidden"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{NUQ35} notempty"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "({NUQ21} notempty and {NUQ21} notcontains [\"NUQ21D\"]) or ({NUQ21} contains [\"NUQ21D\"] and {NUQ22} notempty)"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{NUQ0} = \"NUQ0B\""
+        }
+      ],
+      "visible": false,
+      "visibleIf": "{NOCCFilterQ2} = \"NOCCFilterQ2D\"",
+      "title": "Unhappy With Good or Service"
+    },
+    {
+      "name": "AppResp",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "ARQ1",
+          "title": "Who are you?",
+          "choices": [
+            {
+              "value": "ARQ1A",
+              "text": "The Plaintiff"
+            },
+            {
+              "value": "ARQ1B",
+              "text": "The Defendant"
+            }
+          ]
+        },
+        {
+          "type": "infotext",
+          "name": "ARQ1Define1",
+          "title": "Plaintiff is the person or entity that started the lawsuit. They are the one making the claim.",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "infotext",
+          "name": "ARQ1Define2",
+          "title": "The Defendant is the one being sued. They are named as the defendant on the Notice of Civil Claim. ",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "panel",
+          "name": "ARPanelQ2",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "ARQ2",
+              "title": "What is your full legal name?",
+              "description": "For example, how it appears on your passport or government issued identification."
+            },
+            {
+              "type": "yesno",
+              "name": "Q2a",
+              "title": "Have you filed a document with the court already that contains your address for service?",
+              "description": "If you are named as a defendant or plaintiff and have filed a Notice of Civil Claim or a Response to a Notice of Civil Claim you will have likely already let the courts know at what address you can receive documents."
+            },
+            {
+              "type": "address",
+              "name": "ARQ2b",
+              "visible": false,
+              "visibleIf": "{Q2a} = \"n\"",
+              "title": "What is your address for service?",
+              "description": "This would be an address where you can receive documents relating to this case such as court forms and notices of upcoming court dates."
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{ARQ1} notempty"
+        },
+        {
+          "type": "panel",
+          "name": "ARPanelQ3",
+          "elements": [
+            {
+              "type": "multipletext",
+              "name": "ARQ3",
+              "title": "You are responding to the notice of application made by...",
+              "description": "Write the name as it appears on the Notice of Application form.",
+              "items": [
+                {
+                  "name": "text1"
+                },
+                {
+                  "name": "text2"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "ARQ4",
+              "title": "The applicant is asking for the following orders, please indicate if you are consenting to them, opposing them, or take no position on them.",
+              "choices": [
+                {
+                  "value": "ARQ4A",
+                  "text": "Consent to the the granting of this order"
+                },
+                {
+                  "value": "ARQ4B",
+                  "text": "Oppose the granting of this order"
+                },
+                {
+                  "value": "ARQ4C",
+                  "text": "Take no position to the granting of this order"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "ARPanelQ7",
+              "elements": [
+                {
+                  "type": "comment",
+                  "name": "ARQ7",
+                  "title": "Give a brief summary of facts in support of you opposing the order(s):",
+                  "description": "Use numbered paragraphs to organize your facts. Try to use a new paragraph for each new fact."
+                },
+                {
+                  "type": "comment",
+                  "name": "ARQ8",
+                  "title": "What laws or rules are you relying on to support your application?"
+                },
+                {
+                  "type": "yesno",
+                  "name": "ARQ9",
+                  "title": "Are you relying on any affidavits to support your application?"
+                },
+                {
+                  "type": "panel",
+                  "name": "ARPanelQ10",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "name": "ARQ10Number",
+                      "title": "Affidavit #",
+                      "inputType": "number"
+                    },
+                    {
+                      "type": "text",
+                      "name": "ARQ10Name",
+                      "startWithNewLine": false,
+                      "title": "Name"
+                    },
+                    {
+                      "type": "text",
+                      "name": "ARQ10Date",
+                      "startWithNewLine": false,
+                      "title": "Date",
+                      "inputType": "date"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{ARQ9} = \"y\"",
+                  "title": "Please provide the following information about the `affidavit`:",
+                  "description": "This information can usually be found on the top right hand corner of the `affidavit`."
+                },
+                {
+                  "type": "panel",
+                  "name": "ARPanelQ11",
+                  "elements": [
+                    {
+                      "type": "yesno",
+                      "name": "ARQ11",
+                      "title": "Are you relying on any other documents already in the court file to support your application?"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "ARQ12",
+                      "visible": false,
+                      "visibleIf": "{ARQ11} = \"y\"",
+                      "title": "Please describe this document:"
+                    },
+                    {
+                      "type": "text",
+                      "name": "ARQ13",
+                      "visible": false,
+                      "visibleIf": "{ARQ11} notempty",
+                      "title": "How much time do you estimate it will take you to respond to the application in court?",
+                      "inputType": "time"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{ARQ9} notempty"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{ARQ4} = \"ARQ4B\""
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{Q2a} notempty"
+        }
+      ],
+      "visible": false,
+      "title": "Application Response"
+    },
+    {
+      "name": "AffPersonalService",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "APSQ1",
+          "title": "Who are you?",
+          "choices": [
+            {
+              "value": "APSQ1A",
+              "text": "[Claimant1]"
+            },
+            {
+              "value": "APSQ1B",
+              "text": "[Defendant1]"
+            },
+            {
+              "value": "APSQ1C",
+              "text": "Other"
+            }
+          ]
+        },
+        {
+          "type": "yesno",
+          "name": "APSQ7",
+          "visible": false,
+          "visibleIf": "{APSQ1} = \"APSQ1A\"",
+          "title": "Did you serve [Defendant1]?"
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ4",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "APSQ4",
+              "title": "Did you serve [Claimant1]?"
+            },
+            {
+              "type": "helptext",
+              "name": "APSQ4Help1",
+              "title": "Where can I learn more about serving court forms?",
+              "titleLocation": "hidden",
+              "body": "For guidance on how to serve documents in a Small Claims Court  lawsuit see the Serving Documents How to Guide (https://www2.gov.bc.ca/gov/content/justice/courthouse-services/small-claims/how-to-guides/serving-documents) "
+            },
+            {
+              "type": "infotext",
+              "name": "APSQ4Define",
+              "title": "To serve documents means getting documents from one person to another. There are specific rules on how to give certain court forms to other parties in a lawsuit. ",
+              "titleLocation": "hidden"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{APSQ1} = \"APSQ1B\""
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ2",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "APSQ2",
+              "title": "What is your full legal name?",
+              "description": "Please include your full legal name. For example, how it appears on your passport or government issued identification."
+            },
+            {
+              "type": "radiogroup",
+              "name": "APSQ3",
+              "title": "Who did you serve?",
+              "description": "This is the person you gave the documents to.",
+              "choices": [
+                {
+                  "value": "APSQ3A",
+                  "text": "[defendant]"
+                },
+                {
+                  "value": "APSQ3B",
+                  "text": "[claimant]"
+                },
+                {
+                  "value": "APSQ3C",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "infotext",
+              "name": "APSQ3Define",
+              "title": "To serve documents means getting documents from one person to another. There are specific rules on how to give certain court forms to other parties in a lawsuit. ",
+              "titleLocation": "hidden"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{APSQ1} = \"APSQ1C\""
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ8",
+          "elements": [
+            {
+              "type": "text",
+              "name": "APSQ8",
+              "title": "When did you serve [Defendant1]?",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "address",
+              "name": "APSQ9",
+              "title": "Where did you serve [Defendant1]?"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "({APSQ1} = \"APSQ1A\" and {APSQ7} = \"y\") or ({APSQ1} = \"APSQ1C\" and {APSQ3} = \"APSQ3A\")"
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ5",
+          "elements": [
+            {
+              "type": "text",
+              "name": "APSQ5",
+              "title": "When did you serve [Claimant1]?",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "address",
+              "name": "APSQ6",
+              "title": "Where did you serve [Defendant1]?"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "({APSQ1} = \"APSQ1B\" and {APSQ4} = \"y\") or ({APSQ1} = \"APSQ1C\" and {APSQ3} = \"APSQ3B\")"
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ10",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "PersonServed",
+              "title": "What is the name of the person you served?"
+            },
+            {
+              "type": "text",
+              "name": "APSQ12",
+              "title": "When did you serve [PersonServed]?",
+              "inputType": "datetime-local"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "({APSQ1} = \"APSQ1A\" and {APSQ7} = \"n\") or ({APSQ1} = \"APSQ1B\" and {APSQ4} = \"n\") or ({APSQ1} = \"APSQ1C\" and {APSQ3} = \"APSQ3C\")"
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ13",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "APSQ13",
+              "title": "Did [Person Served] admit to you they were [PersonServed] at the time you served them?"
+            },
+            {
+              "type": "yesno",
+              "name": "APSQ14",
+              "visible": false,
+              "visibleIf": "{APSQ13} notempty",
+              "title": "Did you serve [] with the document by personally handing it to them and leaving it with them?"
+            },
+            {
+              "type": "infotext",
+              "name": "APSQ14End",
+              "visible": false,
+              "visibleIf": "{APSQ14} = \"n\"",
+              "title": "END",
+              "titleLocation": "hidden",
+              "messageStyle": "error"
+            },
+            {
+              "type": "panel",
+              "name": "APSPanelQ15",
+              "elements": [
+                {
+                  "type": "multipletext",
+                  "name": "APSQ15",
+                  "title": "What document did you serve them with?",
+                  "items": [
+                    {
+                      "name": "text1"
+                    },
+                    {
+                      "name": "text2"
+                    }
+                  ]
+                },
+                {
+                  "type": "checkbox",
+                  "name": "APSQ16",
+                  "title": "Please indicate which documents have already been filed with the courts",
+                  "choices": [
+                    "item1",
+                    "item2",
+                    "item3"
+                  ]
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{APSQ14} = \"y\""
+            }
+          ],
+          "visible": false,
+          "visibleIf": "({APSQ1} = \"APSQ1A\" and {APSQ7} notempty) or ({APSQ1} = \"APSQ1B\" and {APSQ4} notempty) or ({APSQ1} = \"APSQ1C\" and {APSQ3} notempty)"
+        }
+      ],
+      "visible": false,
+      "visibleIf": "{NOCCFilterQ2} = \"NOCCFilterQ2D\"",
+      "title": "Affidavit of Personal Service"
+    },
+    {
+      "name": "AffOrdSer",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "AOQ1",
+          "title": "Who are you?",
+          "description": "You are the claimant if you are the one who start the lawsuit. You are the defendant if you are named as a defendant in the Notice of Claim.",
+          "choices": [
+            {
+              "value": "AOQ1A",
+              "text": "The Claimant"
+            },
+            {
+              "value": "AOQ1B",
+              "text": "The Defendant"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "AOPanelQ2",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "AOQ2",
+              "title": "What is your full legal name?",
+              "description": "Please include your full legal name. For example, how it appears on your passport or government issued identification."
+            },
+            {
+              "type": "text",
+              "name": "AOQ3",
+              "title": "What is your occupation?",
+              "description": "For example: Nurse, Carpenter, Accountant, Student, etc."
+            },
+            {
+              "type": "address",
+              "name": "AOQ4",
+              "title": "What is your address?"
+            },
+            {
+              "type": "personname",
+              "name": "AOQ5",
+              "title": "What is the name of the person you served?",
+              "description": "This is the person you gave or sent the documents to."
+            },
+            {
+              "type": "infotext",
+              "name": "AOQ5Define",
+              "title": "To serve documents means getting documents from one person to another. There are specific rules on how to give certain court forms to other parties in a lawsuit. Check the Court Rules or seek legal advice if you are unsure how to serve your documents. ",
+              "titleLocation": "hidden"
+            },
+            {
+              "type": "helptext",
+              "name": "AOQ5Q1",
+              "title": "Where can I learn more about serving court forms?",
+              "titleLocation": "hidden",
+              "body": "For guidance on how to serve court documents see the Supreme Court Civil Guide Starting an Action by Notice of Civil Claim (https://www.supremecourtbc.ca/sites/default/files/web/Starting-an-Action-by-Notice-of-Civil-Claim.pdf"
+            },
+            {
+              "type": "text",
+              "name": "AOQ6",
+              "title": "When did you serve [PersonServed]?",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "radiogroup",
+              "name": "AOQ7",
+              "title": "How did you serve [PersonServed]?",
+              "choices": [
+                {
+                  "value": "AOQ7A",
+                  "text": "Left the document at their address for service"
+                },
+                {
+                  "value": "AOQ7B",
+                  "text": "Mailed the document to them"
+                },
+                {
+                  "value": "AOQ7C",
+                  "text": "Faxed it to them"
+                },
+                {
+                  "value": "AOQ7D",
+                  "text": "Emailed it to them"
+                },
+                {
+                  "value": "AOQ7E",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "infotext",
+              "name": "AOQ7ADefine",
+              "title": "Address for service: ",
+              "titleLocation": "hidden"
+            },
+            {
+              "type": "address",
+              "name": "AOQ9",
+              "visible": false,
+              "visibleIf": "{AOQ7} = \"AOQ7A\"",
+              "title": "What is their address for service where you left the document?"
+            },
+            {
+              "type": "panel",
+              "name": "AOPanelQ10",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "AOQ10",
+                  "title": "Did you send the document through ordinary mail?"
+                },
+                {
+                  "type": "helptext",
+                  "name": "AOQ10Q1",
+                  "title": "How do I know if it was ordinary mail or not?",
+                  "titleLocation": "hidden",
+                  "body": "If you sent it through registered mail select \"no\", otherwise you probably sent it via ordinary mail."
+                },
+                {
+                  "type": "comment",
+                  "name": "AOQ11",
+                  "visible": false,
+                  "visibleIf": "{AOQ10} = \"n\"",
+                  "title": "Please describe the method of mailing you used to send the document."
+                },
+                {
+                  "type": "address",
+                  "name": "AOQ12",
+                  "visible": false,
+                  "visibleIf": "{AOQ10} notempty",
+                  "title": "What is the address where you mailed the document?"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{AOQ7} = \"AOQ7B\""
+            },
+            {
+              "type": "text",
+              "name": "AOQ13",
+              "visible": false,
+              "visibleIf": "{AOQ7} = \"AOQ7C\"",
+              "title": "What is the fax number you faxed the document to?",
+              "inputType": "number"
+            },
+            {
+              "type": "text",
+              "name": "AOQ14",
+              "visible": false,
+              "visibleIf": "{AOQ7} = \"AOQ7D\"",
+              "title": "What is the email address you emailed the document to?"
+            },
+            {
+              "type": "comment",
+              "name": "AOQ8",
+              "visible": false,
+              "visibleIf": "{AOQ7} = \"AOQ7E\"",
+              "title": "Please explain how you served [PersonServed].",
+              "description": "Please provide the method of service and the exact location of where they were served. If you have a court order allowing for alternative service please provide details. For example:"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{AOQ1} notempty"
+        },
+        {
+          "type": "panel",
+          "name": "AOPanelQ14a",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "AOQ14a",
+              "title": "What document did you serve them with?",
+              "choices": [
+                {
+                  "value": "AOQ14aA",
+                  "text": "Notice of Civil Claim between [plaintiff] v [Defendant]"
+                },
+                {
+                  "value": "AOQ14aB",
+                  "text": "Affidavit"
+                },
+                {
+                  "value": "AOQ14aC",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "AOPanel14c",
+              "elements": [
+                {
+                  "type": "personname",
+                  "name": "AOQ14c",
+                  "title": "Whose `affidavit` is it?"
+                },
+                {
+                  "type": "text",
+                  "name": "AOQ14d",
+                  "title": "When was this `affidavit` sworn?",
+                  "inputType": "date"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{AOQ14a} = \"AOQ14aB\""
+            },
+            {
+              "type": "text",
+              "name": "AOQ14b",
+              "visible": false,
+              "visibleIf": "{AOQ14a} = \"AOQ14aC\"",
+              "title": "What is the name of this document?"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "({AOQ7} notempty and {AOQ7} <> \"AOQ7B\") or {AOQ10} notempty"
+        },
+        {
+          "type": "panel",
+          "name": "AOPanel14e",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "AOQ14e",
+              "title": "Has this document already been filed with the courts?"
+            },
+            {
+              "type": "text",
+              "name": "AOQ14f",
+              "visible": false,
+              "visibleIf": "{AOQ14e} = \"y\"",
+              "title": "What is the court stamped date on the document?",
+              "inputType": "date"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{AOQ14a} notempty"
+        },
+        {
+          "type": "panel",
+          "name": "AOPanelQ15",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "AOQ15",
+              "title": "You must attach a copy of the document(s) you served when you file the Certificate of Service form with the courts. Do you promise to attach a copy of served documents?"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{AOQ14e} notempty"
+        },
+        {
+          "type": "panel",
+          "name": "AOPanelQ16",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "AOQ16",
+              "title": "Do you swear or affirm that the information you have provided is true?"
+            },
+            {
+              "type": "infotext",
+              "name": "AOQ16End",
+              "visible": false,
+              "visibleIf": "{AOQ16} = \"n\"",
+              "title": "We are sorry you cannot proceed with this form. Please check your answers again or seek legal advice if you need assistance.",
+              "titleLocation": "hidden",
+              "messageStyle": "error"
+            },
+            {
+              "type": "infotext",
+              "name": "AOQ16Complete",
+              "visible": false,
+              "visibleIf": "{AOQ16} = \"y\"",
+              "title": "Complete",
+              "titleLocation": "hidden"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{AOQ15} notempty"
+        }
+      ],
+      "title": "Affidavit of Ord. Service"
+    },
+    {
+      "name": "AffPersonalService",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "APQ1",
+          "title": "Who are you?",
+          "description": "You are the plaintiff if you are the one who start the lawsuit. You are the defendant if you are named as a defendant in the Notice of Civil Claim.",
+          "choices": [
+            {
+              "value": "APQ1A",
+              "text": "The Plaintiff"
+            },
+            {
+              "value": "APQ1B",
+              "text": "The Defendant"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "APPanelQ2",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "APQ2",
+              "title": "What is your full legal name?",
+              "description": "Please include your full legal name. For example, how it appears on your passport or government issued identification."
+            },
+            {
+              "type": "text",
+              "name": "APQ3",
+              "title": "What is your occupation?",
+              "description": "For example: Nurse, Carpenter, Accountant, Student, etc. "
+            },
+            {
+              "type": "address",
+              "name": "APQ4",
+              "title": "What is your address?"
+            },
+            {
+              "type": "personname",
+              "name": "APQ5",
+              "title": "What is the name of the person you served?",
+              "description": "This is the person you personally gave the documents to."
+            },
+            {
+              "type": "infotext",
+              "name": "APQ5Define",
+              "title": "To serve documents means getting documents from one person to another. There are specific rules on how to give certain court forms to other parties in a lawsuit. Check the Court Rules or seek legal advice if you are unsure how to serve your documents.",
+              "titleLocation": "hidden"
+            },
+            {
+              "type": "helptext",
+              "name": "APQ5Q1",
+              "title": "Where can I learn more about serving court forms?",
+              "titleLocation": "hidden",
+              "body": "For guidance on how to serve court documents see the Supreme Court Civil Guide Starting an Action by Notice of Civil Claim (https://www.supremecourtbc.ca/sites/default/files/web/Starting-an-Action-by-Notice-of-Civil-Claim.pdf"
+            },
+            {
+              "type": "text",
+              "name": "APQ6",
+              "title": "When did you serve [PersonServed]?",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "address",
+              "name": "APQ7",
+              "title": "Where did you serve [PersonServed]?"
+            },
+            {
+              "type": "yesno",
+              "name": "APQ8",
+              "title": "Did [Person Served] admit to you they were [PersonServed] at the time you served them?"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{APQ1} notempty"
+        },
+        {
+          "type": "panel",
+          "name": "APPanelQ9",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "APQ9",
+              "title": "Did you serve [personServed] with the document by personally handing it to them and leaving it with them?"
+            },
+            {
+              "type": "infotext",
+              "name": "APQ9End",
+              "visible": false,
+              "visibleIf": "{APQ9} = \"n\"",
+              "title": "We are sorry you cannot proceed with this form. Please check your answers again or seek legal advice if you need assistance.",
+              "titleLocation": "hidden",
+              "messageStyle": "error"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{APQ8} notempty"
+        },
+        {
+          "type": "panel",
+          "name": "APPanelQ10",
+          "elements": [
+            {
+              "type": "radiogroup",
+              "name": "APQ10",
+              "title": "What document did you serve them with?",
+              "choices": [
+                {
+                  "value": "APQ10A",
+                  "text": "Notice of Civil Claim between [plaintiff] v [Defendant]"
+                },
+                {
+                  "value": "APQ10B",
+                  "text": "Affidavit"
+                },
+                {
+                  "value": "APQ10C",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "APPanelQ10a",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "APQ10a",
+                  "title": "What is the name of this document?"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{APQ10} = \"APQ10C\""
+            },
+            {
+              "type": "panel",
+              "name": "APPanelQ10b",
+              "elements": [
+                {
+                  "type": "personname",
+                  "name": "APQ10b",
+                  "title": "Whose `affidavit` is it?"
+                },
+                {
+                  "type": "text",
+                  "name": "APQ10c",
+                  "title": "When was this `affidavit` sworn?",
+                  "inputType": "date"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{APQ10} = \"APQ10B\""
+            },
+            {
+              "type": "panel",
+              "name": "APPanelQ11",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "APQ11",
+                  "title": "Has this document already been filed with the courts?"
+                },
+                {
+                  "type": "text",
+                  "name": "APQ11a",
+                  "visible": false,
+                  "visibleIf": "{APQ11} = \"y\"",
+                  "title": "What is the court stamped date on the document?",
+                  "inputType": "date"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{APQ10} notempty"
+            },
+            {
+              "type": "panel",
+              "name": "APPanelQ11b",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "APQ11b",
+                  "title": "You must attach a copy of the document(s) you served when you file the Certificate of Service form with the courts. Do you promise to attach a copy of served documents?"
+                },
+                {
+                  "type": "yesno",
+                  "name": "APQ12",
+                  "visible": false,
+                  "visibleIf": "{APQ11b} notempty",
+                  "title": "Do you swear or affirm that the information you have provided is true?"
+                },
+                {
+                  "type": "infotext",
+                  "name": "APQ12End",
+                  "visible": false,
+                  "visibleIf": "{APQ12} = \"n\"",
+                  "title": "We are sorry you cannot proceed with this form. Please check your answers again or seek legal advice if you need assistance.",
+                  "titleLocation": "hidden",
+                  "messageStyle": "error"
+                },
+                {
+                  "type": "infotext",
+                  "name": "APQ12Complete",
+                  "visible": false,
+                  "visibleIf": "{APQ12} = \"y\"",
+                  "title": "Complete",
+                  "titleLocation": "hidden"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{APQ11} notempty"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{APQ9} = \"y\""
+        }
+      ],
+      "title": "Affidavit of Personal Service"
+    },
+    {
+      "name": "SupAff",
+      "elements": [
+        {
+          "type": "infotext",
+          "name": "AFQ0Note1",
+          "title": "An `affidavit` is one of the ways you will tell your story to the court. A judge may also ask you to tell your story, under oath, in court. \n\nIn your `affidavit`, tell your story in your own words. Include all the facts that you think the judge may need. Everything you say must to be true to the best of your knowledge. \n\nYou can include information that you got from someone else, but you must include who told you, when they told you and that you believe what they said is true. For example, you can include information that your child has told you. \n\nClick here to get tips for writing your `affidavit`. (https://www.supremecourtbc.ca/sites/default/files/web/A-Guide-to-Preparing-Your-Affidavit.pdf)",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "radiogroup",
+          "name": "AFQ1",
+          "title": "Who are you?",
+          "description": "You are the plaintiff if you are the one who start the lawsuit. You are the defendant if you are being sued and are named as a defendant in the Notice of Civil Claim.",
+          "choices": [
+            {
+              "value": "AFQ1A",
+              "text": "The Plaintiff"
+            },
+            {
+              "value": "AFQ1B",
+              "text": "The Defendant"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "AFPanelQ3",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "AFQ2",
+              "title": "What is your full legal name?",
+              "description": "Please include your full legal name. For example, how it appears on your passport or government issued identification."
+            },
+            {
+              "type": "text",
+              "name": "AFQ3",
+              "title": "What is your job or occupation?",
+              "description": "For example: Nurse, Carpenter, Accountant, Student, etc."
+            },
+            {
+              "type": "address",
+              "name": "AFQ4",
+              "title": "What is your address?"
+            },
+            {
+              "type": "text",
+              "name": "AFQ5",
+              "title": "How many 'affidavits' have you written before this one for this case?",
+              "description": "If you have already written 2 'affidavits' before this one you should select #3.",
+              "inputType": "number",
+              "placeHolder": "Enter number here"
+            },
+            {
+              "type": "yesno",
+              "name": "AFQ6",
+              "title": "Do you have personal knowledge of the information and facts that you are putting in this `affidavit`?"
+            },
+            {
+              "type": "infotext",
+              "name": "AFQ6E1",
+              "visible": false,
+              "visibleIf": "{AFQ6} = \"n\"",
+              "title": "Sorry, but to proceed you must have personal knowledge of the information and facts within your `affidavit`.",
+              "titleLocation": "hidden",
+              "messageStyle": "error"
+            },
+            {
+              "type": "panel",
+              "name": "AFPanelQ7",
+              "elements": [
+                {
+                  "type": "comment",
+                  "name": "AFQ7",
+                  "title": "Describe your relationship with the other party(ies) in the lawsuit."
+                },
+                {
+                  "type": "comment",
+                  "name": "AFQ8",
+                  "title": "Describe your evidence (what you heard or saw first hand):",
+                  "description": "Stick to one issue or fact per paragraph. To add another paragraph simply press \"add paragraph\"."
+                },
+                {
+                  "type": "infotext",
+                  "name": "AFP1",
+                  "title": "PRESENT PREVIEW",
+                  "titleLocation": "hidden"
+                },
+                {
+                  "type": "radiogroup",
+                  "name": "AFQ9",
+                  "title": "You have read over your statement and swear or affirm it to be true to the best of your knowledge?",
+                  "choices": [
+                    {
+                      "value": "AFQ9A",
+                      "text": "Yes"
+                    },
+                    {
+                      "value": "AFQ9B",
+                      "text": "I'd like to go back and edit it"
+                    }
+                  ]
+                },
+                {
+                  "type": "helptext",
+                  "name": "AFQ9Q1",
+                  "title": "I'd like to attach a document how do I do that?",
+                  "titleLocation": "hidden",
+                  "body": "\"If you want to support a fact in your `affidavit` with a document, you must refer to it in your `affidavit` as an exhibit. Each exhibit should be given a letter and referred to in alphabetical order. The first exhibit you refer to in the `affidavit` will be lettered ‘A'. For example: As of July 12, 2015, I have $30,000 in my TD bank account. Attached to this, my `affidavit` as Exhibit A, is a true copy of my TD bank \n\nAttach all your exhibits at the end of your `affidavit`. If your exhibit has multiple pages, number the pages.\""
+                },
+                {
+                  "type": "infotext",
+                  "name": "AFComplete",
+                  "visible": false,
+                  "visibleIf": "{AFQ9} = \"AFQ9A\"",
+                  "title": "Complete",
+                  "titleLocation": "hidden"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{AFQ6} = \"y\""
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{AFQ1} notempty"
+        }
+      ],
+      "title": "Supreme Affidavit"
+    },
+    {
+      "name": "AppResp",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "ARQ1",
+          "title": "Who are you?",
+          "choices": [
+            {
+              "value": "ARQ1A",
+              "text": "The Plaintiff"
+            },
+            {
+              "value": "ARQ1B",
+              "text": "The Defendant"
+            }
+          ]
+        },
+        {
+          "type": "infotext",
+          "name": "ARQ1Define1",
+          "title": "Plaintiff is the person or entity that started the lawsuit. They are the one making the claim.",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "infotext",
+          "name": "ARQ1Define2",
+          "title": "The Defendant is the one being sued. They are named as the defendant on the Notice of Civil Claim. ",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "panel",
+          "name": "ARPanelQ2",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "ARQ2",
+              "title": "What is your full legal name?",
+              "description": "For example, how it appears on your passport or government issued identification."
+            },
+            {
+              "type": "yesno",
+              "name": "Q2a",
+              "title": "Have you filed a document with the court already that contains your address for service?",
+              "description": "If you are named as a defendant or plaintiff and have filed a Notice of Civil Claim or a Response to a Notice of Civil Claim you will have likely already let the courts know at what address you can receive documents."
+            },
+            {
+              "type": "address",
+              "name": "ARQ2b",
+              "visible": false,
+              "visibleIf": "{Q2a} = \"n\"",
+              "title": "What is your address for service?",
+              "description": "This would be an address where you can receive documents relating to this case such as court forms and notices of upcoming court dates."
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{ARQ1} notempty"
+        },
+        {
+          "type": "panel",
+          "name": "ARPanelQ3",
+          "elements": [
+            {
+              "type": "multipletext",
+              "name": "ARQ3",
+              "title": "You are responding to the notice of application made by...",
+              "description": "Write the name as it appears on the Notice of Application form.",
+              "items": [
+                {
+                  "name": "text1"
+                },
+                {
+                  "name": "text2"
+                }
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "ARQ4",
+              "title": "The applicant is asking for the following orders, please indicate if you are consenting to them, opposing them, or take no position on them.",
+              "choices": [
+                {
+                  "value": "ARQ4A",
+                  "text": "Consent to the the granting of this order"
+                },
+                {
+                  "value": "ARQ4B",
+                  "text": "Oppose the granting of this order"
+                },
+                {
+                  "value": "ARQ4C",
+                  "text": "Take no position to the granting of this order"
+                }
+              ]
+            },
+            {
+              "type": "panel",
+              "name": "ARPanelQ7",
+              "elements": [
+                {
+                  "type": "comment",
+                  "name": "ARQ7",
+                  "title": "Give a brief summary of facts in support of you opposing the order(s):",
+                  "description": "Use numbered paragraphs to organize your facts. Try to use a new paragraph for each new fact."
+                },
+                {
+                  "type": "comment",
+                  "name": "ARQ8",
+                  "title": "What laws or rules are you relying on to support your application?"
+                },
+                {
+                  "type": "yesno",
+                  "name": "ARQ9",
+                  "title": "Are you relying on any `affidavit`s to support your application?"
+                },
+                {
+                  "type": "panel",
+                  "name": "ARPanelQ10",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "name": "ARQ10Number",
+                      "title": "Affidavit #",
+                      "inputType": "number"
+                    },
+                    {
+                      "type": "text",
+                      "name": "ARQ10Name",
+                      "startWithNewLine": false,
+                      "title": "Name"
+                    },
+                    {
+                      "type": "text",
+                      "name": "ARQ10Date",
+                      "startWithNewLine": false,
+                      "title": "Date",
+                      "inputType": "date"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{ARQ9} = \"y\"",
+                  "title": "Please provide the following information about the `affidavit`:",
+                  "description": "This information can usually be found on the top right hand corner of the `affidavit`."
+                },
+                {
+                  "type": "panel",
+                  "name": "ARPanelQ11",
+                  "elements": [
+                    {
+                      "type": "yesno",
+                      "name": "ARQ11",
+                      "title": "Are you relying on any other documents already in the court file to support your application?"
+                    },
+                    {
+                      "type": "comment",
+                      "name": "ARQ12",
+                      "visible": false,
+                      "visibleIf": "{ARQ11} = \"y\"",
+                      "title": "Please describe this document:"
+                    },
+                    {
+                      "type": "text",
+                      "name": "ARQ13",
+                      "visible": false,
+                      "visibleIf": "{ARQ11} notempty",
+                      "title": "How much time do you estimate it will take you to respond to the application in court?",
+                      "inputType": "time"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{ARQ9} notempty"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{ARQ4} = \"ARQ4B\""
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{Q2a} notempty"
+        }
+      ],
+      "title": "Application Response"
+    },
+    {
+      "name": "NoticeApp",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "NAQ1",
+          "title": "Who are you?",
+          "choices": [
+            {
+              "value": "NAQ1A",
+              "text": "The Plaintiff"
+            },
+            {
+              "value": "NAQ1B",
+              "text": "The Defendant"
+            }
+          ]
+        },
+        {
+          "type": "infotext",
+          "name": "NAQ1Define1",
+          "title": "Plaintiff is the person or entity that started the lawsuit. They are the one making the claim.",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "infotext",
+          "name": "NAQ1Define2",
+          "title": "The Defendant is the one being sued. They are named as the defendant on the Notice of Civil Claim.",
+          "titleLocation": "hidden"
+        },
+        {
+          "type": "panel",
+          "name": "NAPanelQ2",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "NAQ2",
+              "title": "What is your full legal name?",
+              "description": "For example, how it appears on your passport or government issued identification."
+            },
+            {
+              "type": "multipletext",
+              "name": "NAQ3",
+              "title": "Name all the people or parties affected by this application",
+              "description": "This usually includes the defendant and plaintiff and the person the order relates to. For example if you are seeking an order for the plaintiff's medical records held by Dr. Smith, you would want to name both the plaintiff and Dr. Smith.",
+              "items": [
+                {
+                  "name": "text1"
+                },
+                {
+                  "name": "text2"
+                }
+              ]
+            },
+            {
+              "type": "dropdown",
+              "name": "NAQ4",
+              "title": "Please choose the courthouse you wish to make your application at:",
+              "choices": [
+                {
+                  "value": "NAQ4A",
+                  "text": "dropdown menu of all supreme courthouses in bc"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "name": "NAQ5",
+              "title": "When will you appear before the court to make this application?",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "text",
+              "name": "NAQ5A",
+              "title": "How long do you expect this application to take?",
+              "inputType": "time"
+            },
+            {
+              "type": "comment",
+              "name": "NAQ6",
+              "title": "What order are you asking the court to make?",
+              "description": "If you are asking for multiple orders use separate numbered paragraphs for each. Specify who the order is against. "
+            },
+            {
+              "type": "comment",
+              "name": "NAQ7",
+              "title": "Give a brief summary of facts supporting this application:",
+              "description": "Use numbered paragraphs to organize your facts. Try to use a new paragraph for each new fact."
+            },
+            {
+              "type": "comment",
+              "name": "NAQ8",
+              "title": "What laws or rules are you relying on to support your application?"
+            },
+            {
+              "type": "yesno",
+              "name": "NAQ9",
+              "title": "Are you relying on any 'affidavits' to support your application?"
+            },
+            {
+              "type": "panel",
+              "name": "NAPanelQ10",
+              "elements": [
+                {
+                  "type": "text",
+                  "name": "NAQ10Number",
+                  "title": "Affidavit #",
+                  "inputType": "number"
+                },
+                {
+                  "type": "text",
+                  "name": "NAQ10Name",
+                  "startWithNewLine": false,
+                  "title": "Name"
+                },
+                {
+                  "type": "text",
+                  "name": "NAQ10Date",
+                  "startWithNewLine": false,
+                  "title": "Date",
+                  "inputType": "date"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NAQ9} = \"y\"",
+              "title": "Please provide the following information about the `affidavit`:",
+              "description": "This information can usually be found on the top right hand corner of the `affidavit`."
+            },
+            {
+              "type": "panel",
+              "name": "NAPanelQ11",
+              "elements": [
+                {
+                  "type": "yesno",
+                  "name": "NAQ11",
+                  "title": "Are you relying on any other documents already in the court file to support your application?"
+                },
+                {
+                  "type": "comment",
+                  "name": "NAQ12",
+                  "visible": false,
+                  "visibleIf": "{NAQ11} = \"y\"",
+                  "title": "Please describe this document:"
+                },
+                {
+                  "type": "checkbox",
+                  "name": "NAQ13",
+                  "visible": false,
+                  "visibleIf": "{NAQ11} notempty",
+                  "title": "Please select all that apply: This application involves:",
+                  "choices": [
+                    "item1",
+                    "item2",
+                    "item3"
+                  ]
+                },
+                {
+                  "type": "infotext",
+                  "name": "NAComplete",
+                  "visible": false,
+                  "visibleIf": "{NAQ11} notempty",
+                  "title": "Complete",
+                  "titleLocation": "hidden"
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{NAQ9} notempty"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{NAQ1} notempty"
+        }
+      ],
+      "title": "Notice of Application"
+    },
+    {
+      "name": "AffPersonalService",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "APSQ1",
+          "title": "Who are you?",
+          "choices": [
+            {
+              "value": "APSQ1A",
+              "text": "[Claimant1]"
+            },
+            {
+              "value": "APSQ1B",
+              "text": "[Defendant1]"
+            },
+            {
+              "value": "APSQ1C",
+              "text": "Other"
+            }
+          ]
+        },
+        {
+          "type": "yesno",
+          "name": "APSQ7",
+          "visible": false,
+          "visibleIf": "{APSQ1} = \"APSQ1A\"",
+          "title": "Did you serve [Defendant1]?"
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ4",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "APSQ4",
+              "title": "Did you serve [Claimant1]?"
+            },
+            {
+              "type": "helptext",
+              "name": "APSQ4Help1",
+              "title": "Where can I learn more about serving court forms?",
+              "titleLocation": "hidden",
+              "body": "For guidance on how to serve documents in a Small Claims Court  lawsuit see the Serving Documents How to Guide (https://www2.gov.bc.ca/gov/content/justice/courthouse-services/small-claims/how-to-guides/serving-documents) "
+            },
+            {
+              "type": "infotext",
+              "name": "APSQ4Define",
+              "title": "To serve documents means getting documents from one person to another. There are specific rules on how to give certain court forms to other parties in a lawsuit. ",
+              "titleLocation": "hidden"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{APSQ1} = \"APSQ1B\""
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ2",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "APSQ2",
+              "title": "What is your full legal name?",
+              "description": "Please include your full legal name. For example, how it appears on your passport or government issued identification."
+            },
+            {
+              "type": "radiogroup",
+              "name": "APSQ3",
+              "title": "Who did you serve?",
+              "description": "This is the person you gave the documents to.",
+              "choices": [
+                {
+                  "value": "APSQ3A",
+                  "text": "[defendant]"
+                },
+                {
+                  "value": "APSQ3B",
+                  "text": "[claimant]"
+                },
+                {
+                  "value": "APSQ3C",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "infotext",
+              "name": "APSQ3Define",
+              "title": "To serve documents means getting documents from one person to another. There are specific rules on how to give certain court forms to other parties in a lawsuit. ",
+              "titleLocation": "hidden"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{APSQ1} = \"APSQ1C\""
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ8",
+          "elements": [
+            {
+              "type": "text",
+              "name": "APSQ8",
+              "title": "When did you serve [Defendant1]?",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "address",
+              "name": "APSQ9",
+              "title": "Where did you serve [Defendant1]?"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "({APSQ1} = \"APSQ1A\" and {APSQ7} = \"y\") or ({APSQ1} = \"APSQ1C\" and {APSQ3} = \"APSQ3A\")"
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ5",
+          "elements": [
+            {
+              "type": "text",
+              "name": "APSQ5",
+              "title": "When did you serve [Claimant1]?",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "address",
+              "name": "APSQ6",
+              "title": "Where did you serve [Defendant1]?"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "({APSQ1} = \"APSQ1B\" and {APSQ4} = \"y\") or ({APSQ1} = \"APSQ1C\" and {APSQ3} = \"APSQ3B\")"
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ10",
+          "elements": [
+            {
+              "type": "personname",
+              "name": "PersonServed",
+              "title": "What is the name of the person you served?"
+            },
+            {
+              "type": "text",
+              "name": "APSQ12",
+              "title": "When did you serve [PersonServed]?",
+              "inputType": "datetime-local"
+            }
+          ],
+          "visible": false,
+          "visibleIf": "({APSQ1} = \"APSQ1A\" and {APSQ7} = \"n\") or ({APSQ1} = \"APSQ1B\" and {APSQ4} = \"n\") or ({APSQ1} = \"APSQ1C\" and {APSQ3} = \"APSQ3C\")"
+        },
+        {
+          "type": "panel",
+          "name": "APSPanelQ13",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "APSQ13",
+              "title": "Did [Person Served] admit to you they were [PersonServed] at the time you served them?"
+            },
+            {
+              "type": "yesno",
+              "name": "APSQ14",
+              "visible": false,
+              "visibleIf": "{APSQ13} notempty",
+              "title": "Did you serve [] with the document by personally handing it to them and leaving it with them?"
+            },
+            {
+              "type": "infotext",
+              "name": "APSQ14End",
+              "visible": false,
+              "visibleIf": "{APSQ14} = \"n\"",
+              "title": "END",
+              "titleLocation": "hidden",
+              "messageStyle": "error"
+            },
+            {
+              "type": "panel",
+              "name": "APSPanelQ15",
+              "elements": [
+                {
+                  "type": "multipletext",
+                  "name": "APSQ15",
+                  "title": "What document did you serve them with?",
+                  "items": [
+                    {
+                      "name": "text1"
+                    },
+                    {
+                      "name": "text2"
+                    }
+                  ]
+                },
+                {
+                  "type": "checkbox",
+                  "name": "APSQ16",
+                  "title": "Please indicate which documents have already been filed with the courts",
+                  "choices": [
+                    "item1",
+                    "item2",
+                    "item3"
+                  ]
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{APSQ14} = \"y\""
+            }
+          ],
+          "visible": false,
+          "visibleIf": "({APSQ1} = \"APSQ1A\" and {APSQ7} notempty) or ({APSQ1} = \"APSQ1B\" and {APSQ4} notempty) or ({APSQ1} = \"APSQ1C\" and {APSQ3} notempty)"
+        }
+      ],
+      "title": "Affidavit of Personal Service"
+    },
+    {
+      "name": "ResponseCivil",
+      "elements": [
+        {
+          "type": "yesno",
+          "name": "RCQ1",
+          "title": "Are you replying to a Notice of Civil Claim?"
+        },
+        {
+          "type": "infotext",
+          "name": "RCQ1End",
+          "visible": false,
+          "visibleIf": "{RCQ1} = \"n\"",
+          "title": "Sorry in order to fill out this form you need to be the defendant in this case.",
+          "titleLocation": "hidden",
+          "messageStyle": "error"
+        },
+        {
+          "type": "panel",
+          "name": "RCPanelQ2",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "RCQ2",
+              "title": "Are you [Defendant]?",
+              "description": "The Defendant is the one being sued. They are named as the defendant on the Notice of Civil Claim."
+            },
+            {
+              "type": "infotext",
+              "name": "RCQ2End",
+              "visible": false,
+              "visibleIf": "{RCQ2} = \"n\"",
+              "title": "Sorry in order to fill out this form you need to be the defendant in this case.",
+              "titleLocation": "hidden",
+              "messageStyle": "error"
+            },
+            {
+              "type": "panel",
+              "name": "RCPanelQ3",
+              "elements": [
+                {
+                  "type": "radiogroup",
+                  "name": "RCQ3",
+                  "title": "Please verify this is your address [defendant's address], email, and fax where you can receive court documents",
+                  "choices": [
+                    {
+                      "value": "RCQ3A",
+                      "text": "Yes, that is my address"
+                    },
+                    {
+                      "value": "RCQ3B",
+                      "text": "No, that is not my address"
+                    }
+                  ]
+                },
+                {
+                  "type": "panel",
+                  "name": "RCPanelQ4",
+                  "elements": [
+                    {
+                      "type": "address",
+                      "name": "RCQ4A",
+                      "title": "What is the address where you can receive court documents?"
+                    },
+                    {
+                      "type": "contactinfo",
+                      "name": "RCQ4B",
+                      "title": "Contact information"
+                    },
+                    {
+                      "type": "helptext",
+                      "name": "RCQ4Q1",
+                      "title": "Do I need to provide my home address?",
+                      "titleLocation": "hidden",
+                      "body": "No, the address does not need to be to your home, so long as you are able to receive documents at the address provided. For example, it can be a work address. "
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{RCQ3} = \"RCQ3B\""
+                },
+                {
+                  "type": "panel",
+                  "name": "RCPanelQ5",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "RCQ5",
+                      "title": "1: ____________(from NOCC)",
+                      "choices": [
+                        {
+                          "value": "RCQ5A",
+                          "text": "I admit this is true"
+                        },
+                        {
+                          "value": "RCQ5B",
+                          "text": "I deny this is true"
+                        },
+                        {
+                          "value": "RCQ5C",
+                          "text": "This is outside of my knowledge "
+                        }
+                      ]
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{RCQ3} notempty",
+                  "title": "The following are statements made in the Notice of Civil Claim. Please indicate if you admit, or deny these statements or that they are outside of your knowledge. "
+                },
+                {
+                  "type": "panel",
+                  "name": "RCPanelQ6",
+                  "elements": [
+                    {
+                      "type": "multipletext",
+                      "name": "RCQ6",
+                      "title": "Your version of facts: In numbered paragraphs please provide an explanation of why you are denying any of the statements of facts made in the Notice of Civil Claim",
+                      "description": "This is where you can set out your version of the facts. For example if you denied the Plaintiff's statement \"You agreed to install the kitchen plumbing by June 15th 2018.\"  You would write \"On June 1st 2018, you informed the Plaintiff the kitchen plumbing would be installed by June 30th 2018. The Plaintiff agree to this timeline.\"",
+                      "items": [
+                        {
+                          "name": "text1"
+                        },
+                        {
+                          "name": "text2"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "multipletext",
+                      "name": "RCQ7",
+                      "title": "Additional Facts: In numbered paragraphs please explain any additional facts that are relevant to this case.",
+                      "items": [
+                        {
+                          "name": "text1"
+                        },
+                        {
+                          "name": "text2"
+                        }
+                      ]
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{RCQ5} = \"RCQ5B\""
+                },
+                {
+                  "type": "panel",
+                  "name": "RCPanelQ8",
+                  "elements": [
+                    {
+                      "type": "radiogroup",
+                      "name": "RCQ8",
+                      "title": "1: _______________ (from NOCC)",
+                      "choices": [
+                        {
+                          "value": "RCQ8A",
+                          "text": "Consent"
+                        },
+                        {
+                          "value": "RCQ8B",
+                          "text": "Oppose"
+                        },
+                        {
+                          "value": "RCQ8C",
+                          "text": "Take no position"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "multipletext",
+                      "name": "RCQ9",
+                      "visible": false,
+                      "visibleIf": "{RCQ8} = \"RCQ8B\"",
+                      "title": "What legal basis you are using to oppose the claim?",
+                      "description": "Specify any rules, laws or legal principles you are relying on. Use a new entry for each legal basis.",
+                      "items": [
+                        {
+                          "name": "text1"
+                        },
+                        {
+                          "name": "text2"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "infotext",
+                      "name": "RCComplete",
+                      "visible": false,
+                      "visibleIf": "{RCQ8} notempty",
+                      "title": "Complete",
+                      "titleLocation": "hidden"
+                    }
+                  ],
+                  "visible": false,
+                  "visibleIf": "{RCQ5} notempty",
+                  "title": "The following relief is sought by [defendant]. Please indicate what position you are taking on the granting of each relief."
+                }
+              ],
+              "visible": false,
+              "visibleIf": "{RCQ2} = \"y\""
+            }
+          ],
+          "visible": false,
+          "visibleIf": "{RCQ1} = \"y\""
+        }
+      ],
+      "title": "Response to Civil Claim"
+    }
+  ],
+  "showQuestionNumbers": "off",
+  "requiredText": ""
+}

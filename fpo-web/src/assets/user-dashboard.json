@@ -1,0 +1,36 @@
+{
+  "firstName": "User",
+  "lastName": "Test",
+  "address": "Test address",
+  "phone": 78855446622,
+  "email": "test@gmail.com",
+  "forms": {
+    "inProgress": [
+      {
+        "name": "test1"
+      },{
+        "name": "test2"
+      },{
+        "name": "test4"
+      }
+    ],
+    "finished": [
+      {
+        "name": "test3"
+      },{
+        "name": "test5"
+      },{
+        "name": "test6"
+      }
+    ],
+    "submitted": [
+      {
+        "name": "test7"
+      },{
+        "name": "test8"
+      },{
+        "name": "test9"
+      }
+    ]
+  }
+}

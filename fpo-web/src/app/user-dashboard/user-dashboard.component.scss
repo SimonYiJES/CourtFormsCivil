@@ -1,0 +1,35 @@
+.user-dashboard {
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .info-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+
+    input {
+      padding: 5px 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      line-height: 22px;
+      font-size: 16px;
+    }
+  }
+}
+
+.forms-container {
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      font-size: 20px;
+      list-style-type: none;
+    }
+  }
+}

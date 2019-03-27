@@ -1,0 +1,195 @@
+{
+  "pages": [
+    {
+      "name": "Qualifying Questions",
+      "elements": [
+        {
+          "type": "checkbox",
+          "name": "PORConfirmed",
+          "title": "You appear to meet the requirements to use this service to apply for a Provincial Court `Family Law Protection Order`.\n<br>\n<br>\nYou may also want to consider applying for a `Peace Bond`, which is another kind of `Protection Order`. A Peace Bond can do everything a Provincial Court Family Law Protection Order can do. A Peace Bond can also protect your property.\n<br>\n<br>\nTo get a Peace Bond, you will need to tell your story to the police or the RCMP. The police may decide to tell your story to Crown Counsel. Crown Counsel will then decide if a judge is likely to make your Protection Order. Your ex-partner will have an opportunity to tell their story. You may be called as witness.\n<br>\n<br>\nTo apply for a Family Law Protection Order, you will need to tell your story in person to a judge in Family Court. You can apply on your own or you can hire a lawyer to help. A judge may decide to make your Protection Order without your ex-partner needing to be in court.\n<br>\n<br>\nYou can also apply for both Protection Orders at the same time. \n<br>\n<br>\n<a href=\"http://www.lss.bc.ca/resources/pdfs/pubs/For-Your-Protection-eng.pdf\" target=\"_blank\">Click here for more information about the differences between a Peace Bond and a Provincial Court Family Law Protection Order.</a>\n<br>\n<br>\nConfirm that you want to apply for a Provincial Court Family Law Protection Order.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "confirmed",
+              "text": "I want to apply for a Provincial Court Family Law Protection Order"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "q1",
+          "title": "Did the dispute (the reason for the claim) take place in BC?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "q2",
+          "visible": false,
+          "visibleIf": "{q1} = \"yes\"",
+          "title": "Is the claim against a single person or entity?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "q3",
+          "visible": false,
+          "visibleIf": "{q2} = \"yes\"",
+          "title": "Does your case involve a motor vehicle accident?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "q3a",
+          "visible": false,
+          "visibleIf": "{q3} = \"yes\"",
+          "title": "Is the value of your claim over $50,000?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "q4",
+          "visible": false,
+          "visibleIf": "{q3} = \"no\"",
+          "title": "Does your case involve a personal injury claim?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "q4a",
+          "visible": false,
+          "visibleIf": "{q4} = \"yes\"",
+          "title": "Is the value of your claim over $50,000?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "q5",
+          "visible": false,
+          "visibleIf": "{q4} = \"no\"",
+          "title": "What is the total value of the claim?",
+          "choices": [
+            {
+              "value": "crt",
+              "text": "Under $5000"
+            },
+            {
+              "value": "scc",
+              "text": "$5000 - $35,000"
+            },
+            {
+              "value": "scbc",
+              "text": "Over $35,000"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "q5a",
+          "visible": false,
+          "visibleIf": "{q5} = \"crt\"",
+          "title": "Most claims under $5000 are heard by CRT. Does your case involve an issue where court has jurisdiction?",
+          "choices": [
+            {
+              "value": "scc",
+              "text": "Yes. Small Claims Court has jurisdiction\t"
+            },
+            {
+              "value": "scbc",
+              "text": "Yes. BC Supreme Court has jurisdiction"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "offramp1",
+          "visible": false,
+          "visibleIf": "{q1} = \"no\"",
+          "html": "This online tool can only be used for BC disputes."
+        },
+        {
+          "type": "html",
+          "name": "offramp2",
+          "visible": false,
+          "visibleIf": "{q2} = \"no\"",
+          "html": "This online tool only allows 1 person or entity as the defendant. Use another form. LINK"
+        },
+        {
+          "type": "html",
+          "name": "offramp3",
+          "visible": false,
+          "visibleIf": "{q4a} = \"no\"",
+          "html": "CRT handles MVA under $50,000."
+        },
+        {
+          "type": "html",
+          "name": "offramp4",
+          "visible": false,
+          "visibleIf": "{q5a} = \"no\"",
+          "html": "CRT handles personal injury claims under $50,000"
+        }
+      ],
+      "title": "Before we begin...",
+      "description": "There is more than one kind of order that can protect you and your family. This service is for applying for a protection order under the Family Law Act. The following questions will help you decide if the Provincial Court Family Law Protection Order is right for you."
+    }
+  ],
+  "showQuestionNumbers": "off",
+  "requiredText": ""
+}
