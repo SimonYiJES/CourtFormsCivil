@@ -175,14 +175,14 @@
           "type": "html",
           "name": "offramp3",
           "visible": false,
-          "visibleIf": "{q4a} = \"no\"",
+          "visibleIf": "{q3a} = \"no\"",
           "html": "CRT handles MVA under $50,000."
         },
         {
           "type": "html",
           "name": "offramp4",
           "visible": false,
-          "visibleIf": "{q5a} = \"no\"",
+          "visibleIf": "{q4a} = \"no\"",
           "html": "CRT handles personal injury claims under $50,000"
         }
       ],

@@ -39,7 +39,7 @@ from api.pdf import render as render_pdf
 
 
 class AcceptTermsView(APIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    # permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request):
         request.user.accepted_terms_at = datetime.now()
@@ -69,7 +69,7 @@ class UserStatusView(APIView):
 
 
 class SurveyPdfView(generics.GenericAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    # permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request, name=None):
         tpl_name = 'survey-{}.html'.format(name)

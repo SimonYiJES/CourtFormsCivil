@@ -20,7 +20,7 @@ LOGGER = logging.getLogger(__name__)
 #@method_decorator(csrf_exempt, name='dispatch')
 class SurveyCacheView(APIView):
     """Manage in-memory caching of survey results (not saved to database)"""
-    permission_classes = (permissions.IsAuthenticated,)
+    # permission_classes = (permissions.IsAuthenticated,)
 
     def get_cache_manager(self, uid):
         if uid and settings.SURVEY_CACHE_ENABLED:
